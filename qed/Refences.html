@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>QEDynamics References</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Times New Roman", serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 20px;
+        }
+        h1 {
+            text-align: left;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        .errata {
+            margin-left: 0px;
+            color: #000000;
+        }
+        a {
+            color: #0000ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .bibtex {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .copy-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .copy-btn i {
+            font-size: 10px;
+            color: #000000;
+        }
+        .copy-btn:hover i {
+            color: #45a049;
+        }
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e7f7e7;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* 初期状態で非表示 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+
+    <!-- For KaTeX --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}]
+        });
+      });
+    </script>
+
+    <script>
+        function copyToClipboard(contentId) {
+            // 指定されたIDの要素を取得
+            var content = document.getElementById(contentId).textContent;
+            
+            // 一時的なテキストエリアを作成して内容をコピー
+            var textarea = document.createElement("textarea");
+            textarea.value = content;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            
+            // メッセージ表示
+            var message = document.getElementById("copyMessage");
+            message.style.display = "block"; // メッセージを表示
+            setTimeout(function() {
+                message.style.display = "none"; // 3秒後にメッセージを非表示
+            }, 3000);
+        }
+    </script>
+
+</head>
+
+<body>
+    <button id="show-errata">Show all ERRATA</button>
+    <button id="toggle-details">Show only Refs</button>
+    <h1>QEDynamics References</h1>
+    <ol>
+        <li>
+            <p><strong><a href="https://link.springer.com/article/10.1007/s002140050490">
+                    Chemical Potential Inequality Principle</a></strong>,
+                    A. Tachibana, Theoretical Chemistry Accounts 102, 188-195 (1999)</p>
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent" class="bibtex">
+@article{Tachibana1999,
+  author    = {Tachibana, Akitomo},
+  title     = {Chemical potential inequality principle},
+  journal   = {Theoretical Chemistry Accounts},
+  year      = {1999},
+  volume    = {102},
+  number    = {1},
+  pages     = {188--195},
+  doi       = {10.1007/s002140050490},
+  url       = {https://doi.org/10.1007/s002140050490},
+  issn      = {1432-2234},
+  abstract  = {Regional density functional theory has been extended to treat irreversible thermodynamic electronic processes for application to adiabatic electron-transfer processes of chemical reactions. Onsager's local equilibrium hypothesis is slightly modified to take into account the quantum mechanical nature of the electron. The quantum mechanical interference effect has been demonstrated to be included in the entropy production rate formula associated with electron transfer through an interface. A new formula for the determination of the transition state of a chemical reaction has been postulated that corresponds to the maximum of the regional electron transferability. A quantum mechanical law of mass action has been established and applied to prove the regional electrochemical potential inequality principle.}
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>Page 191 Eq. (33) for $\displaystyle E_j = \sum_R E_{jR}, E_{jR} = E_{j} \omega_{jR}$ read $\displaystyle E_j=\sum_R E_{jR}$</li>
+                        <li>Page 191 Eq. (36) for $\displaystyle E_R = \sum_j p_j E_{jR} = \sum_j p_j E_{j} \omega_{jR}$ read $\displaystyle E_R = \sum_j p_j E_{jR}$</li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="">Field Energy Density in Chemical Reaction Systems</a></strong>,
+                    A. Tachibana, in Fundamental Perspectives in Quantum Chemistry: A Tribute to the Memory of Per-Olov Lowdin, Eds. by Erkki Brandas and Eugene Kryachko (Kluwer Academic Publishers, Dordrecht, 2003), pp. 211-239.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent1')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent1" class="bibtex">
+@incollection{Tachibana2003,
+  author    = {Tachibana, Akitomo},
+  title     = {Field Energy Density in Chemical Reaction Systems},
+  booktitle = {Fundamental Perspectives in Quantum Chemistry: A Tribute to the Memory of Per-Olov Lowdin},
+  editor    = {Brandas, Erkki and Kryachko, Eugene},
+  publisher = {Kluwer Academic Publishers},
+  year      = {2003},
+  pages     = {211--239},
+  address   = {Dordrecht},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 215 Eq.(6) for $i\hbar\frac{\partial}{\partial s^i}$
+                            read $i\hbar \frac{\partial}{\partial r^i}$ 
+                        </li>
+                        <li>
+                            Page 215 Eq.(7) for $i\hbar \hat{D}_{ek} (\vec{r}) \hat{\bar{\psi}}(\vec{r}) \gamma^k$
+                            read $i\hbar \hat{D}^\dagger_{ek} (\vec{r}) \hat{\bar{\psi}}(\vec{r}) \gamma^k$
+                        </li>
+                        <li>
+                            Page 218 Eq.(36) for $\vec{A} (\vec{r})$
+                            read $\hat{\vec{A}} (\vec{r})$ 
+                        </li>
+                        <li>
+                            Page 225 Eq.(91), last line for $2\int d^3 \vec{1}$
+                            read $\int d^3 \vec{1}$
+                        </li>
+                        <li>
+                            Page 226 Eq.(93) , last line for $2\int d^3 \vec{1}$
+                            read $\int d^3 \vec{1}$
+                        </li>
+                        <li> 
+                            Page 229 Eq.(102)  for $\frac{Z^5 e^2}{\pi a^4} \frac{1}{x^4} \left(\frac{2}{x}-\frac{1}{2} \right) e^{-x}$
+                            read $\frac{Z^5 e^2}{\pi a^4} \left(\frac{2}{x}-\frac{1}{2} \right) e^{-x}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://link.springer.com/article/10.1007/s00894-005-0260-y">
+                    A new visualization scheme of chemical energy density and bonds in molecules</a></strong>,
+                    A. Tachibana, Journal of Molecular Modeling 11, 301-311 (2005).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent2')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068761">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent2" class="bibtex">
+@article{Tachibana2005,
+  author    = {Tachibana, Akitomo},
+  title     = {A new visualization scheme of chemical energy density and bonds in molecules},
+  journal   = {Journal of Molecular Modeling},
+  year      = {2005},
+  volume    = {11},
+  pages     = {301--311},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 305 Eq. (70) for $-\varepsilon_{lnk} \hat{\tau}_e^{\Pi ln} (\vec{r}) - \hat{\zeta}_e(\vec{r})$
+                            read $-\varepsilon_{lnk} \hat{\tau}_e^{\Pi ln} (\vec{r}) + \hat{\zeta}_e^k(\vec{r})$
+                        </li>
+                        <li>
+                            Page 305 Eq. (71) for $\hat{\zeta}_e(\vec{r}) = c \partial_l \left( \hat{\bar{\psi}}(x)\gamma^l\frac{1}{2} \hbar \sigma^l \hat{\psi}(x) \right)$ 
+                            read  $\hat{\zeta}_e^l(\vec{r}) = -c \partial_l \left( \hat{\bar{\psi}}(x)\gamma^l\frac{1}{2} \hbar \sigma^l \hat{\psi}(x) \right)$ ; no sum over $l$
+                        </li>
+                        <li> 
+                            Page 305 Eq. (73) for $-\hat{\zeta}_e(\vec{r})$
+                            read $+\hat{\vec{\zeta}}_e(\vec{r})$
+                        </li>
+                        <li> 
+                            Page 306 Eq. (88) for $-\hat{\zeta}_e(\vec{r})$
+                            read $+\hat{\vec{\zeta}}_e(\vec{r})$
+
+                        </li>
+                        <li> 
+                            Page 306 Eq. (89) for $-\hat{\zeta}_e(\vec{r})$
+                            read $+\hat{\vec{\zeta}}_e(\vec{r})$
+
+                        </li>
+                        <li> 
+                            Page 310 Eq. (122) for $\hat{A}_M (\vec{r})$
+                            read $\hat{A}_{0_M}$
+                        </li>
+                        <li>
+                            Page 311 Eq. (129) for $\hat{\vec{j}} (\vec{r}) = \hat{\vec{G}}(\vec{r}) \hat{\vec{E}}(\vec{r})$
+                            read $\hat{\vec{j}}(\vec{r}) = \hat{\stackrel{\leftrightarrow}{\sigma}}_{\rm ext}(\vec{r}) \left(\hat{\vec{D}}(\vec{r}) -\frac{1}{c} \frac{\partial}{\partial t} \hat{\vec{A}}_{\rm radiation} (\vec{r}) \right)
+                            = \hat{\stackrel{\leftrightarrow}{\sigma}}_{\rm ext}(\vec{r}) \hat{\stackrel{\leftrightarrow}{\varepsilon}}(\vec{r}) \hat{\vec{E}}(\vec{r})
+                            = \hat{\stackrel{\leftrightarrow}{\sigma}}_{\rm int}(\vec{r}) \hat{\vec{E}}(\vec{r})$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://ieeexplore.ieee.org/document/4570993">
+                    Local-property analysis for modeling of gate insulator materials</a></strong>,
+                    Kentaro Doi, Koichi Nakamura, and Akitomo Tachibana, 2006 International Workshop on Nano CMOS, (IEEE 2006), pp. 209-235. IEEE Catalog Number: 06EX1513 ISBN: 1-4244-0603-X Library of Congress: 2006931374.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent3')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent3" class="bibtex">
+ @INPROCEEDINGS{4570993,
+  author={Kentaro Doi and Koichi Nakamura and Akitomo Tachibana},
+  booktitle={2006 International Workshop on Nano CMOS}, 
+  title={Local-property analysis for modeling of gate insulator materials}, 
+  year={2006},
+  volume={},
+  number={},
+  pages={209-235},
+  keywords={Dielectrics and electrical insulation;Dielectric materials;Dielectric breakdown;Nanostructured materials;Nanoscale devices;Density functional theory;Reliability theory;Hafnium oxide;Zirconium;Amorphous materials;IWNC;Nano CMOS;Rigged QED theory;Regional density functional theory;Dielectric property;Reliability;La oxide},
+  doi={10.1109/IWNC.2006.4570993}}
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            <p> Page 234  Fig. 14 caption the following caption continues: </p>
+                            <p> It is a 3x3 real not-necessarily-symmetric tensor and has (i) 3 real eigenvalues, or (ii) 1 real and 2 complex conjugate ones. For the former case (i), the red (blue) color indicates the region where the largest eigenvalue is positive (negative) with the principal axis in green along which the dilatational dielectric response occurs. For the latter case (ii), the purple color indicates the region where the rotational dielectric response is predicted, with the equi-rotation-angle curves. </p>
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://www.sciencedirect.com/science/article/abs/pii/S0166128009007520">
+                    Energy density concept: A stress tensor approach</a></strong>,
+                    A. Tachibana, Journal of Molecular Structure: THEOCHEM 943, 138-151 (2010).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent4')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068740">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent4" class="bibtex">
+@article{TACHIBANA2010138,
+title = {Energy density concept: A stress tensor approach},
+journal = {Journal of Molecular Structure: THEOCHEM},
+volume = {943},
+number = {1},
+pages = {138-151},
+year = {2010},
+note = {Conceptual Aspects of Electron Densities and Density Functionals},
+issn = {0166-1280},
+doi = {https://doi.org/10.1016/j.theochem.2009.11.018},
+url = {https://www.sciencedirect.com/science/article/pii/S0166128009007520},
+author = {Akitomo Tachibana},
+keywords = {Energy density, Stress tensor, Spin torque},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 145 Eq. (5.25) for $\hat{A}_{M} (x)$ 
+                            read $\hat{A}_{0_M} (x)$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://journals.jps.jp/doi/abs/10.1143/JPSJ.79.084302">
+                    Spin Torque and Zeta Force of Dimer of Alkali Atoms</a></strong>,
+                    Masato Senami, Jun Nishikawa, Takaaki Hara, and Akitomo Tachibana, Journal of the Physical Society of Japan 79, 084302(9), (2010).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent5')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068738">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent5" class="bibtex">
+@article{Senami2010,
+  author = {Masato Senami and Jun Nishikawa and Takaaki Hara and Akitomo Tachibana},
+  title = {Spin Torque and Zeta Force of Dimer of Alkali Atoms},
+  journal = {Journal of the Physical Society of Japan},
+  volume = {79},
+  number = {8},
+  pages = {084302},
+  year = {2010},
+  doi = {10.1143/JPSJ.79.084302}
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><a href="./errata/spin.html" target="_blank">ERRATA</a></summary>
+            </details>
+
+        </li>
+        <li>
+            <p><strong><a href="https://link.springer.com/article/10.1007/s10910-011-9943-z">
+                    General relativistic symmetry of electron spin torque</a></strong>,
+                    A. Tachibana, Journal of Mathematical Chemistry 50, 669-688 (2012).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent6')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068723">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent6" class="bibtex">
+@article{Tachibana2012,
+  author    = {Tachibana, Akitomo},
+  title     = {General relativistic symmetry of electron spin torque},
+  journal   = {Journal of Mathematical Chemistry},
+  year      = {2012},
+  volume    = {50},
+  number    = {4},
+  pages     = {669--688},
+  doi       = {10.1007/s10910-011-9943-z},
+  url       = {https://doi.org/10.1007/s10910-011-9943-z},
+  issn      = {1572-8897},
+}    
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li> 
+                            Page 676 Eq.(63) for $\frac{\hbar c^2}{2}$
+                            read $\frac{\hbar c}{2}$
+                        </li>
+                        <li> 
+                            Page 685 Eq.(C6) for $\phi^2$
+                            read $\phi$ 
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="#">Electronic Stress with Spin Vorticity</a></strong>,
+                    A. Tachibana, Concepts and Methods in Modern Theoretical Chemistry: Electronic Structure and Reactivity (Atoms, Molecules, and Clusters); Eds. by Swapan K. Ghosh and Pratim K. Chattaraj; Taylor & Francis / CRC Press, 2013; Chapter 12, pp.235-251.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent7')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent7" class="bibtex">
+@incollection{Tachibana2013,
+  author    = {Tachibana, Akitomo},
+  title     = {Electronic Stress with Spin Vorticity},
+  booktitle = {Concepts and Methods in Modern Theoretical Chemistry: Electronic Structure and Reactivity (Atoms, Molecules, and Clusters)},
+  editor    = {Ghosh, Swapan K. and Chattaraj, Pratim K.},
+  publisher = {Taylor & Francis / CRC Press},
+  year      = {2013},
+  chapter   = {12},
+  pages     = {235--251},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 236 Eq.(12.8) for $F^{\mu \nu}$ 
+                            read $F^{\nu \mu}$
+                        </li>
+                        <li>
+                            Page 236 Eq.(12.10) for $-R^{\mu}_{\ \ \nu}$ 
+                            read $+R^{\mu}_{\ \ \nu}$ 
+                        </li>
+                        <li> 
+                            Page 237 Eq.(12.12) for $-R^{0}_{\ \ \nu}$ 
+                            read $+R^{0}_{\ \ \nu}$
+                        </li>
+                        <li>
+                            Page 237 Eq.(12.13) for $-R^{k}_{\ \ \nu}$ 
+                            read $+R^{k}_{\ \ \nu}$
+                        </li>
+                        <li> 
+                            Page 237 Eq.(12.16) for $-R^{k}_{\ \ \nu}$ 
+                            read $+R^{k}_{\ \ \nu}$
+                        </li>
+                        <li> 
+                            Page 237 Eq.(12.20) for $\varepsilon^{\Pi}_{\mu \nu}$
+                            read $-\varepsilon^{\Pi}_{\mu \nu}$
+                        </li>
+                        <li>
+                            <p> Page 239 Eq.(12.35) the following sentence continues: </p>
+                            <p> The l.h.s. of Equations 12.33 and 12.35 are unique up to irrotational vector fields. </p>
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/191144">
+                    Electronic stress tensor of chemical bond</a></strong>, 
+                    A. Tachibana, Indian Journal of Chemistry Vol. 53A, Aug-Sept 2014, pp. 1031-1035.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent8')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068717">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent8" class="bibtex">
+@article{Tachibana2014,
+  author    = {Tachibana, Akitomo},
+  title     = {Electronic stress tensor of chemical bond},
+  journal   = {Indian Journal of Chemistry},
+  year      = {2014},
+  volume    = {53A},
+  pages     = {1031--1035},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li> 
+                            Page 1032 Eq.(8) for ++ read  +
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(26) for ++ read  +
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(27) for $\tau$ read $\tau^{\Pi}_{\mu \nu}$
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(27) for $\gamma$ read $\gamma_\nu$ 
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(27) for $D$ read $D_\mu$
+                        </li>
+                        <li> 
+                            Page 1034 line 1 below Eq. (42) for "is the linear superfield"
+                            read "is represented by the linear superfield $\bar{\cal D} \Xi (x)$"
+                        </li>
+                        <li>
+                            Page 1034 Eq. (43) for $\bar{d}$ read $\bar{\cal D}$
+                        </li>
+                        <li> 
+                            Suppl Data Appendix - SD Eq. (72) for $i\hbar$ read $i$ 
+                        </li>
+                        <li> 
+                            Suppl Data Appendix - SD Eq. (73) for $i\hbar$ read $i$
+                        </li>
+                        <li> 
+                            Suppl Data Appendix - SD line 1 below Eq. (73) for $q$ read $\cal{Q}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://link.springer.com/article/10.1007/s10910-015-0528-0">
+                    General relativistic symmetry of electron spin vorticity</a></strong>,
+                    A. Tachibana, Journal of Mathematical Chemistry 53, 1943-1965 (2015).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent9')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068716">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent9" class="bibtex">
+@article{Tachibana2015,
+  author    = {Tachibana, Akitomo},
+  title     = {General relativistic symmetry of electron spin vorticity},
+  journal   = {Journal of Mathematical Chemistry},
+  year      = {2015},
+  volume    = {53},
+  number    = {9},
+  pages     = {1943--1965},
+  doi       = {10.1007/s10910-015-0528-0},
+  url       = {https://doi.org/10.1007/s10910-015-0528-0},
+  issn      = {1572-8897},
+  abstract  = {The general relativistic symmetry of quantum electrodynamics (QED) predicts that the spin vorticity of electron contributes to the kinetic momentum of electron. The canonical quantization of QED is performed by using new b-photon, f-electron, and $$f^{c}$$-positron algebras. These algebras work for interacting particles and are useful for nonperturbationally solving the dual Cauchy problems of QED.}
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 1955 line below Eq. (3.44) for: Eqs. (3.22)-(2.1) read: Eq. (3.22) to Eq. (2.1)
+                        </li>
+                        <li>
+                            Page 1956 Eq. (3.53) for $\displaystyle \sum_{\sigma=\pm 1}$ read $\displaystyle \sum_{\sigma=\pm \frac{1}{2}}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://link.springer.com/article/10.1007/s10910-015-0587-2">
+                    Time-dependent renormalization of alpha-oscillators for QED</a></strong>,
+                    A. Tachibana, Journal of Mathematical Chemistry 54, 661-681 (2016).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent10')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                [<a href="https://researchmap.jp/read0012802/published_papers/16068713">RM</a>]
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent10" class="bibtex">
+@article{Tachibana2016,
+  author    = {Tachibana, Akitomo},
+  title     = {Time-dependent renormalization of alpha-oscillators for QED},
+  journal   = {Journal of Mathematical Chemistry},
+  year      = {2016},
+  volume    = {54},
+  number    = {3},
+  pages     = {661--681},
+  doi       = {10.1007/s10910-015-0587-2},
+  url       = {https://doi.org/10.1007/s10910-015-0587-2},
+  issn      = {1572-8897},
+  abstract  = {Time-dependent renormalization of QED (quantum electrodynamics) is performed in terms of sub-particles, b-photon, f-electron, $$f^{c}$$-positron (see previous paper: Tachibana in J Math Chem 53:1943, 2015), which are called alpha-oscillators so named here in this paper. This is achieved by using q-number renormalization constants over and above alpha-resonance and thermalization of alpha-oscillators. This approach paves the way for realizing nonperturbationally space-time resolved simulation of the time-dependent QED Hamiltonian $$¥hat{{H}}_{¥mathrm{QED}} ¥left( t ¥right) $$.}
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 671 Eq. (2.44) for $\int d\tilde{\omega}'_1 \cdots d \tilde{\omega}'_M$
+                            read $\int d\omega'_1 \cdots d \omega'_M$
+                        </li>
+                        <li>
+                            Page 673 Eq. (3.8) for $\frac{1}{\sqrt{\hat{z}_b \left( \tilde{\omega} (t) \right)}}$
+                            read $\frac{1}{\sqrt{\hat{z}_{b( \tilde{\omega})} (t) }}$
+                        </li>
+                        <li>
+                            Page 676 Eq. (3.27) for $\frac{1}{\sqrt{\hat{z}_{f ( \tilde{\omega}_{1_{f^c}} )} (t_i)}}$
+                            read $\frac{1}{\sqrt{\hat{z}_{f^c ( \tilde{\omega}_{1_{f^c}} )} (t_i)}}$
+                        </li>
+                        <li>
+                            Page 676 Eq. (3.27) for $\frac{1}{\sqrt{\hat{z}_{f ( \tilde{\omega}_{N_{f^c}} )} (t_i)}}$
+                            read $\frac{1}{\sqrt{\hat{z}_{f^c ( \tilde{\omega}_{N_{f^c}} )} (t_i)}}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://link.springer.com/book/10.1007/978-981-10-3132-8">
+                    New Aspects of Quantum Electrodynamics</a></strong>,
+                    A. Tachibana, Springer Nature Ltd. (2017).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent11')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent11" class="bibtex">
+@book{Tachibana2017,
+  author    = {Akitomo Tachibana},
+  title     = {New Aspects of Quantum Electrodynamics},
+  publisher = {Springer Singapore},
+  year      = {2017},
+  doi       = {10.1007/978-981-10-3132-8},
+  isbn      = {978-981-10-3132-8},
+}                    
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><a href="./errata/Errata20170227.pdf" target="_blank">ERRATA</a></summary>   
+            </details>
+        </li>
+        <li>
+            <p><strong><a href="https://www.saiensu.co.jp/search/?isbn=4910054700473&y=2017">新講 電磁量子力学</a></strong>, 立花明知, SGCライブラリ, (株)サイエンス社, 2017年4月.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent12')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent12" class="bibtex">
+@book{Tachibana2017jp,
+  author    = {立花明知},
+  title     = {新講 量子電磁力学},
+  publisher = {SGCライブラリ, (株)サイエンス社},
+  year      = {2017},
+  month     = {4},
+  isbn      = {4910054700473},
+  pages     = {184},                    
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><a href="./errata/Errata_Shinkou_QED.pdf" target="_blank">ERRATA</a></summary>   
+            </details>
+        </li>
+
+    </ol>
+
+
+
+
+    <script>
+        document.getElementById("show-errata").addEventListener("click", function() {
+            // すべての <details> タグを取得
+            let allDetails = document.querySelectorAll("details");
+
+            // 現在のボタンテキストを確認して切り替え
+            let button0 = document.getElementById("toggle-details");
+            if (button0.innerHTML === "Show details") {
+                // すべての <details> タグを表示
+                allDetails.forEach(details => {
+                    details.style.display = "block";
+                });
+                button0.innerHTML = "Show only Refs";  // ボタンテキストを変更
+            } 
+
+            // クラスが "errata" の <details> タグだけを取得
+            document.querySelectorAll("details.errata").forEach(details => {
+                // open属性があれば削除（折りたたむ）、なければ追加（展開する）
+                if (details.hasAttribute("open")) {
+                    details.removeAttribute("open");  // 折りたたむ
+                } else {
+                    details.setAttribute("open", "");  // 展開する
+                }
+            });
+
+            // 現在のボタンテキストを確認して切り替え
+            let button = document.getElementById("show-errata");
+            if (button.innerHTML === "Show all ERRATA") {
+                button.innerHTML = "Hide all ERRATA";  // ボタンテキストを変更
+            } else {
+                button.innerHTML = "Show all ERRATA";  // ボタンテキストを変更
+            }
+
+        });
+    </script>
+
+    <style>
+    /* ボタンを右上に固定 */
+    #show-errata {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #show-errata:hover {
+        background-color: #45a049;
+    }
+    </style>
+
+    <script>
+        document.getElementById("toggle-details").addEventListener("click", function() {
+            // すべての <details> タグを取得
+            let allDetails = document.querySelectorAll("details");
+
+            // 現在のボタンテキストを確認して切り替え
+            let button = document.getElementById("toggle-details");
+            if (button.innerHTML === "Show details") {
+                // すべての <details> タグを表示
+                allDetails.forEach(details => {
+                    details.style.display = "block";
+                });
+                button.innerHTML = "Show only Refs";  // ボタンテキストを変更
+            } else {
+                // すべての <details> タグを非表示
+                allDetails.forEach(details => {
+                    details.style.display = "none";
+                });
+                button.innerHTML = "Show details";  // ボタンテキストを変更
+            }
+        });
+    </script>
+
+    
+    <style>
+        /* ボタンを右上に固定 */
+        #toggle-details {
+            position: fixed;
+            top: 10px;
+            right: 180px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #749cd3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        #toggle-details:hover {
+            background-color: #749cd3;
+        }
+    </style>
+
+</body>
+</html>
+
