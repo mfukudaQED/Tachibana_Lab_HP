@@ -1,0 +1,3785 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>QEDynamics References</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Times New Roman", serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 20px;
+        }
+        h1 {
+            text-align: left;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        .errata {
+            margin-left: 0px;
+            color: #000000;
+        }
+        a {
+            color: #0000ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .bibtex {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .copy-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .copy-btn i {
+            font-size: 10px;
+            color: #000000;
+        }
+        .copy-btn:hover i {
+            color: #45a049;
+        }
+        .message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e7f7e7;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* 初期状態で非表示 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+
+    <!-- For KaTeX --> 
+    <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}]
+        });
+      });
+    </script>
+    -->
+
+    <!-- For MathJax --> 
+    <script type="text/javascript" async
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>  
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            macros: {
+              slashed: ['{#1\\!\\!\\!/}', 1]  // `\slashed{}` を定義
+            }
+          }
+        };
+    </script>
+
+    <script>
+        function copyToClipboard(contentId) {
+            // 指定されたIDの要素を取得
+            var content = document.getElementById(contentId).textContent;
+            
+            // 一時的なテキストエリアを作成して内容をコピー
+            var textarea = document.createElement("textarea");
+            textarea.value = content;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            
+            // メッセージ表示
+            var message = document.getElementById("copyMessage");
+            message.style.display = "block"; // メッセージを表示
+            setTimeout(function() {
+                message.style.display = "none"; // 3秒後にメッセージを非表示
+            }, 3000);
+        }
+    </script>
+
+</head>
+
+<body>
+    <button id="show-errata">Show all ERRATA</button>
+    <button id="toggle-details">Show only Refs</button>
+    <h1>QEDynamics References</h1>
+
+    <a href="QEDynamics_refs.bibtex" download style="position: fixed; top: 60px; right: 10px;">
+            <i class="fa-solid fa-download"></i> QEDynamics_refs.bibtex
+    </a>   
+
+
+
+    <h3><i class="fa-regular fa-file"></i> Papers</h3>
+    <ol>
+
+        <li>
+            <p><strong><a href="https://link.springer.com/article/10.1007/s002140050490">
+                    Chemical Potential Inequality Principle</a></strong>,<br>
+                    A. Tachibana, Theoretical Chemistry Accounts 102, 188-195 (1999)</p>
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent" class="bibtex">
+@article{Tachibana1999,
+  author    = {Tachibana, Akitomo},
+  title     = {Chemical potential inequality principle},
+  journal   = {Theoretical Chemistry Accounts},
+  year      = {1999},
+  volume    = {102},
+  number    = {1},
+  pages     = {188--195},
+  doi       = {10.1007/s002140050490},
+  url       = {https://doi.org/10.1007/s002140050490},
+  issn      = {1432-2234},
+  abstract  = {Regional density functional theory has been extended to treat irreversible thermodynamic electronic processes for application to adiabatic electron-transfer processes of chemical reactions. Onsager's local equilibrium hypothesis is slightly modified to take into account the quantum mechanical nature of the electron. The quantum mechanical interference effect has been demonstrated to be included in the entropy production rate formula associated with electron transfer through an interface. A new formula for the determination of the transition state of a chemical reaction has been postulated that corresponds to the maximum of the regional electron transferability. A quantum mechanical law of mass action has been established and applied to prove the regional electrochemical potential inequality principle.}
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>Page 191 Eq. (33) for $\displaystyle E_j = \sum_R E_{jR}, E_{jR} = E_{j} \omega_{jR}$ read $\displaystyle E_j=\sum_R E_{jR}$</li>
+                        <li>Page 191 Eq. (36) for $\displaystyle E_R = \sum_j p_j E_{jR} = \sum_j p_j E_{j} \omega_{jR}$ read $\displaystyle E_R = \sum_j p_j E_{jR}$</li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.1384012">
+                     Electronic energy density in chemical reaction systems</a></strong>,<br>
+                     A. Tachibana, The Journal of Chemical Physics 115, 3497–3518 (2001).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent101')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent101" class="bibtex">
+@article{Tachibana_2001,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1063/1.1384012},
+  issn      = {1089-7690},
+  journal   = {The Journal of Chemical Physics},
+  month     = {August},
+  number    = {8},
+  pages     = {3497–3518},
+  publisher = {AIP Publishing},
+  title     = {Electronic energy density in chemical reaction systems},
+  url       = {http://dx.doi.org/10.1063/1.1384012},
+  volume    = {115},
+  year      = {2001}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/1521-396X(200112)188:2<579::AID-PSSA579>3.0.CO;2-K">
+                     First-Principle Theoretical Study on Epitaxial Crystal Growth of GaN</a></strong>,<br>
+                     S. Murata, M. Ikenaga, K. Nakamura, A. Tachibana, K. Matsumoto, physica status solidi (a) 188, 579–582 (2001).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent102')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent102" class="bibtex">
+@article{Murata_2001,
+  author    = {Murata, S. and Ikenaga, M. and Nakamura, K. and Tachibana, A. and Matsumoto, K.},
+  doi       = {10.1002/1521-396x(200112)188:2<579::aid-pssa579>3.0.co;2-k},
+  issn      = {1521-396X},
+  journal   = {physica status solidi (a)},
+  month     = {December},
+  number    = {2},
+  pages     = {579–582},
+  publisher = {Wiley},
+  title     = {First-Principle Theoretical Study on Epitaxial Crystal Growth of GaN},
+  url       = {http://dx.doi.org/10.1002/1521-396X(200112)188:2<579::AID-PSSA579>3.0.CO;2-K},
+  volume    = {188},
+  year      = {2001}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.1480869">
+                     High-spin electronic interaction of small lithium and sodium cluster formation in the excited states</a></strong>,<br>
+                     S. Hotta, K. Doi, K. Nakamura, A. Tachibana, The Journal of Chemical Physics 117, 142–152 (2002).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent106')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent106" class="bibtex">
+@article{Hotta_2002,
+  author    = {Hotta, Shigeru and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1063/1.1480869},
+  issn      = {1089-7690},
+  journal   = {The Journal of Chemical Physics},
+  month     = {July},
+  number    = {1},
+  pages     = {142–152},
+  publisher = {AIP Publishing},
+  title     = {High-spin electronic interaction of small lithium and sodium cluster formation in the excited states},
+  url       = {http://dx.doi.org/10.1063/1.1480869},
+  volume    = {117},
+  year      = {2002}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/S0022-0248(01)02002-4">
+                     Quantum chemical study of gas-phase reactions of trimethylaluminium and triethylaluminium with ammonia in III–V nitride semiconductor crystal growth</a></strong>,<br>
+                     M. Ikenaga, K. Nakamura, A. Tachibana, K. Matsumoto, Journal of Crystal Growth 237–239, 936–941 (2002).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent107')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent107" class="bibtex">
+@article{Ikenaga_2002,
+  author    = {Ikenaga, Masahito and Nakamura, Koichi and Tachibana, Akitomo and Matsumoto, Koh},
+  doi       = {10.1016/s0022-0248(01)02002-4},
+  issn      = {0022-0248},
+  journal   = {Journal of Crystal Growth},
+  month     = {April},
+  pages     = {936–941},
+  publisher = {Elsevier BV},
+  title     = {Quantum chemical study of gas-phase reactions of trimethylaluminium and triethylaluminium with ammonia in III–V nitride semiconductor crystal growth},
+  url       = {http://dx.doi.org/10.1016/S0022-0248(01)02002-4},
+  volume    = {237–239},
+  year      = {2002}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/S0169-4332(03)00503-8">
+                     Theoretical study on the initial processes of nitridation of silicon thin film</a></strong>,<br>
+                     S. Yoshida, K. Doi, K. Nakamura, A. Tachibana, Applied Surface Science 216, 141–148 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent109')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent109" class="bibtex">
+@article{Yoshida_2003,
+  author    = {Yoshida, Seiichi and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1016/s0169-4332(03)00503-8},
+  issn      = {0169-4332},
+  journal   = {Applied Surface Science},
+  month     = {June},
+  number    = {1–4},
+  pages     = {141–148},
+  publisher = {Elsevier BV},
+  title     = {Theoretical study on the initial processes of nitridation of silicon thin film},
+  url       = {http://dx.doi.org/10.1016/S0169-4332(03)00503-8},
+  volume    = {216},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/S0169-4332(03)00407-0">
+                     First-principle theoretical study on the electronic properties of SiO2 models with hydrogenated impurities and charges</a></strong>,<br>
+                     K. Doi, K. Nakamura, A. Tachibana, Applied Surface Science 216, 463–470 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent110')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent110" class="bibtex">
+@article{Doi_2003,
+  author    = {Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1016/s0169-4332(03)00407-0},
+  issn      = {0169-4332},
+  journal   = {Applied Surface Science},
+  month     = {June},
+  number    = {1–4},
+  pages     = {463–470},
+  publisher = {Elsevier BV},
+  title     = {First-principle theoretical study on the electronic properties of SiO2 models with hydrogenated impurities and charges},
+  url       = {http://dx.doi.org/10.1016/S0169-4332(03)00407-0},
+  volume    = {216},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1080/0026897021000035214">
+                     Wavepacket dynamics and quantum mechanical energy densities in the quartet N$2^+$ + O$_2$ system</a></strong>,<br>
+                     K. Hasegawa, K. Doi, K. Nakamura, A. Tachibana, Molecular Physics 101, 295–307 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent111')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent111" class="bibtex">
+@article{HASEGAWA_2003,
+  author    = {HASEGAWA, KOICHI and DOI, KENTARO and NAKAMURA, KOICHI and TACHIBANA, AKITOMO},
+  doi       = {10.1080/0026897021000035214},
+  issn      = {1362-3028},
+  journal   = {Molecular Physics},
+  month     = {January},
+  number    = {1–2},
+  pages     = {295–307},
+  publisher = {Informa UK Limited},
+  title     = {Wavepacket dynamics and quantum mechanical energy densities in the quartet N+2+ O2system},
+  url       = {http://dx.doi.org/10.1080/0026897021000035214},
+  volume    = {101},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.1568086">
+                     Structures and electronic properties of aluminum nanowires</a></strong>,<br>
+                     T. Makita, K. Doi, K. Nakamura, A. Tachibana, The Journal of Chemical Physics 119, 538–546 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent112')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent112" class="bibtex">
+@article{Makita_2003,
+  author    = {Makita, Toshiki and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1063/1.1568086},
+  issn      = {1089-7690},
+  journal   = {The Journal of Chemical Physics},
+  month     = {July},
+  number    = {1},
+  pages     = {538–546},
+  publisher = {AIP Publishing},
+  title     = {Structures and electronic properties of aluminum nanowires},
+  url       = {http://dx.doi.org/10.1063/1.1568086},
+  volume    = {119},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1103/PhysRevB.67.115124">
+                     First-principle dynamical electronic characteristics of Al electromigration in the bulk, surface, and grain boundary</a></strong>,<br>
+                     K. Doi, K. Iguchi, K. Nakamura, A. Tachibana, Physical Review B 67,  (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent113')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent113" class="bibtex">
+@article{Doi_2003,
+  author    = {Doi, K. and Iguchi, K. and Nakamura, K. and Tachibana, A.},
+  doi       = {10.1103/physrevb.67.115124},
+  issn      = {1095-3795},
+  journal   = {Physical Review B},
+  month     = {March},
+  number    = {11},
+  publisher = {American Physical Society (APS)},
+  title     = {First-principle dynamical electronic characteristics of Al electromigration in the bulk, surface, and grain boundary},
+  url       = {http://dx.doi.org/10.1103/PhysRevB.67.115124},
+  volume    = {67},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.42.4540">
+                     Quantum Chemical Mechanism of Heterogeneous Reaction between Trichlorosilane and Adsorbed Water</a></strong>,<br>
+                     T. Makita, K. Nakamura, A. Tachibana, H. Masusaki, K. Matsumoto, Y. Ishihara, Japanese Journal of Applied Physics 42, 4540–4541 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent114')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent114" class="bibtex">
+@article{Makita_2003,
+  author    = {Makita, Toshiki and Nakamura, Koichi and Tachibana, Akitomo and Masusaki, Hiroshi and Matsumoto, Koh and Ishihara, Yoshio},
+  doi       = {10.1143/jjap.42.4540},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {July},
+  number    = {Part 1, No. 7A},
+  pages     = {4540–4541},
+  publisher = {IOP Publishing},
+  title     = {Quantum Chemical Mechanism of Heterogeneous Reaction between Trichlorosilane and Adsorbed Water},
+  url       = {http://dx.doi.org/10.1143/JJAP.42.4540},
+  volume    = {42},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.4028/www.scientific.net/MSF.426-432.2399">
+                     First-Principle Study on the Reactions and Dynamical Electronic Characteristics of Electromigration on Aluminum Nanowires</a></strong>,<br>
+                     Y. Kawakami, T. Kikura, K. Doi, K. Nakamura, A. Tachibana, Materials Science Forum 426–432, 2399–2404 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent115')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent115" class="bibtex">
+@article{Kawakami_2003,
+  author    = {Kawakami, Yoshihiko and Kikura, Takaharu and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.4028/www.scientific.net/msf.426-432.2399},
+  issn      = {1662-9752},
+  journal   = {Materials Science Forum},
+  month     = {August},
+  pages     = {2399–2404},
+  publisher = {Trans Tech Publications, Ltd.},
+  title     = {First-Principle Study on the Reactions and Dynamical Electronic Characteristics of Electromigration on Aluminum Nanowires},
+  url       = {http://dx.doi.org/10.4028/www.scientific.net/MSF.426-432.2399},
+  volume    = {426–432},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/pssc.200303406">
+                     First‐principle study on the structures and electronic properties of gallium nitride nanowires</a></strong>,<br>
+                     Y. Kawakami, N. Higashimaki, K. Doi, K. Nakamura, A. Tachibana, physica status solidi (c) , 2318–2322 (2003).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent116')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent116" class="bibtex">
+@article{Kawakami_2003,
+  author    = {Kawakami, Yoshihiko and Higashimaki, Nobuyuki and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1002/pssc.200303406},
+  issn      = {1610-1634},
+  journal   = {physica status solidi (c)},
+  month     = {November},
+  number    = {7},
+  pages     = {2318–2322},
+  publisher = {Wiley},
+  title     = {First‐principle study on the structures and electronic properties of gallium nitride nanowires},
+  url       = {http://dx.doi.org/10.1002/pssc.200303406},
+  year      = {2003}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/pssb.200405087">
+                     Quantum chemical study on substituent effect of gas‐phase reactions in III–V nitride semiconductor crystal growth</a></strong>,<br>
+                     T. Okada, K. Doi, K. Nakamura, A. Tachibana, physica status solidi (b) 241, 2744–2748 (2004).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent117')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent117" class="bibtex">
+@article{Okada_2004,
+  author    = {Okada, Takanobu and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1002/pssb.200405087},
+  issn      = {1521-3951},
+  journal   = {physica status solidi (b)},
+  month     = {September},
+  number    = {12},
+  pages     = {2744–2748},
+  publisher = {Wiley},
+  title     = {Quantum chemical study on substituent effect of gas‐phase reactions in III–V nitride semiconductor crystal growth},
+  url       = {http://dx.doi.org/10.1002/pssb.200405087},
+  volume    = {241},
+  year      = {2004}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/pssb.200405064">
+                     First‐principle study on electronic properties of gallium nitride and aluminium nitride nanowires</a></strong>,<br>
+                     K. Doi, N. Higashimaki, Y. Kawakami, K. Nakamura, A. Tachibana, physica status solidi (b) 241, 2806–2810 (2004).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent118')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent118" class="bibtex">
+@article{Doi_2004,
+  author    = {Doi, Kentaro and Higashimaki, Nobuyuki and Kawakami, Yoshihiko and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1002/pssb.200405064},
+  issn      = {1521-3951},
+  journal   = {physica status solidi (b)},
+  month     = {August},
+  number    = {12},
+  pages     = {2806–2810},
+  publisher = {Wiley},
+  title     = {First‐principle study on electronic properties of gallium nitride and aluminium nitride nanowires},
+  url       = {http://dx.doi.org/10.1002/pssb.200405064},
+  volume    = {241},
+  year      = {2004}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.electacta.2003.12.082">
+                     First-principle study on structures and electronic properties of aluminum nanowire wrapped in carbon nanotube</a></strong>,<br>
+                     Y. Kawakami, Y. Nojima, K. Doi, K. Nakamura, A. Tachibana, Electrochimica Acta 50, 739–744 (2004).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent119')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent119" class="bibtex">
+@article{Kawakami_2004,
+  author    = {Kawakami, Yoshihiko and Nojima, Yaichi and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo},
+  doi       = {10.1016/j.electacta.2003.12.082},
+  issn      = {0013-4686},
+  journal   = {Electrochimica Acta},
+  month     = {November},
+  number    = {2–3},
+  pages     = {739–744},
+  publisher = {Elsevier BV},
+  title     = {First-principle study on structures and electronic properties of aluminum nanowire wrapped in carbon nanotube},
+  url       = {http://dx.doi.org/10.1016/j.electacta.2003.12.082},
+  volume    = {50},
+  year      = {2004}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.20258">
+                     Spindle structure of the stress tensor of chemical bond</a></strong>,<br>
+                     A. Tachibana, International Journal of Quantum Chemistry 100, 981–993 (2004).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent120')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent120" class="bibtex">
+@article{Tachibana_2004,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1002/qua.20258},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {September},
+  number    = {6},
+  pages     = {981–993},
+  publisher = {Wiley},
+  title     = {Spindle structure of the stress tensor of chemical bond},
+  url       = {http://dx.doi.org/10.1002/qua.20258},
+  volume    = {100},
+  year      = {2004}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s00894-005-0260-y">
+                     A new visualization scheme of chemical energy density and bonds in molecules</a></strong>,<br>
+                     A. Tachibana, Journal of Molecular Modeling 11, 301–311 (2005).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent121')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent121" class="bibtex">
+@article{Tachibana_2005,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1007/s00894-005-0260-y},
+  issn      = {0948-5023},
+  journal   = {Journal of Molecular Modeling},
+  month     = {May},
+  number    = {4–5},
+  pages     = {301–311},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {A new visualization scheme of chemical energy density and bonds in molecules},
+  url       = {http://dx.doi.org/10.1007/s00894-005-0260-y},
+  volume    = {11},
+  year      = {2005}
+}
+
+                </pre>
+                
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 305 Eq. (70) for $-\varepsilon_{lnk} \hat{\tau}_e^{\Pi ln} (\vec{r}) - \hat{\zeta}_e(\vec{r})$
+                            read $-\varepsilon_{lnk} \hat{\tau}_e^{\Pi ln} (\vec{r}) + \hat{\zeta}_e^k(\vec{r})$
+                        </li>
+                        <li>
+                            Page 305 Eq. (71) for $\hat{\zeta}_e(\vec{r}) = c \partial_l \left( \hat{\bar{\psi}}(x)\gamma^l\frac{1}{2} \hbar \sigma^l \hat{\psi}(x) \right)$ 
+                            read  $\hat{\zeta}_e^l(\vec{r}) = -c \partial_l \left( \hat{\bar{\psi}}(x)\gamma^l\frac{1}{2} \hbar \sigma^l \hat{\psi}(x) \right)$ ; no sum over $l$
+                        </li>
+                        <li> 
+                            Page 305 Eq. (73) for $-\hat{\zeta}_e(\vec{r})$
+                            read $+\hat{\vec{\zeta}}_e(\vec{r})$
+                        </li>
+                        <li> 
+                            Page 306 Eq. (88) for $-\hat{\zeta}_e(\vec{r})$
+                            read $+\hat{\vec{\zeta}}_e(\vec{r})$
+
+                        </li>
+                        <li> 
+                            Page 306 Eq. (89) for $-\hat{\zeta}_e(\vec{r})$
+                            read $+\hat{\vec{\zeta}}_e(\vec{r})$
+
+                        </li>
+                        <li> 
+                            Page 310 Eq. (122) for $\hat{A}_M (\vec{r})$
+                            read $\hat{A}_{0_M}$
+                        </li>
+                        <li>
+                            Page 311 Eq. (129) for $\hat{\vec{j}} (\vec{r}) = \hat{\vec{G}}(\vec{r}) \hat{\vec{E}}(\vec{r})$
+                            read $\hat{\vec{j}}(\vec{r}) = \hat{\stackrel{\leftrightarrow}{\sigma}}_{\rm ext}(\vec{r}) \left(\hat{\vec{D}}(\vec{r}) -\frac{1}{c} \frac{\partial}{\partial t} \hat{\vec{A}}_{\rm radiation} (\vec{r}) \right)
+                            = \hat{\stackrel{\leftrightarrow}{\sigma}}_{\rm ext}(\vec{r}) \hat{\stackrel{\leftrightarrow}{\varepsilon}}(\vec{r}) \hat{\vec{E}}(\vec{r})
+                            = \hat{\stackrel{\leftrightarrow}{\sigma}}_{\rm int}(\vec{r}) \hat{\vec{E}}(\vec{r})$
+                        </li>
+                    </ol>
+            </details>
+
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1103/PhysRevB.71.045332">
+                     Theoretical study on first-principles dielectric properties of silicate compounds</a></strong>,<br>
+                     K. Nakamura, K. Doi, K. Fujitani, A. Tachibana, Physical Review B 71,  (2005).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent122')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent122" class="bibtex">
+@article{Nakamura_2005,
+  author    = {Nakamura, Koichi and Doi, Kentaro and Fujitani, Kiwamu and Tachibana, Akitomo},
+  doi       = {10.1103/physrevb.71.045332},
+  issn      = {1550-235X},
+  journal   = {Physical Review B},
+  month     = {January},
+  number    = {4},
+  publisher = {American Physical Society (APS)},
+  title     = {Theoretical study on first-principles dielectric properties of silicate compounds},
+  url       = {http://dx.doi.org/10.1103/PhysRevB.71.045332},
+  volume    = {71},
+  year      = {2005}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.44.4133">
+                     Reaction Processes of Germane Molecules with Catalytic Water</a></strong>,<br>
+                     N. Ibuta, F. Sagara, K. Doi, K. Nakamura, A. Tachibana, Y. Ishihara, K. Suzuki, Japanese Journal of Applied Physics 44, 4133 (2005).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent123')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent123" class="bibtex">
+@article{Ibuta_2005,
+  author    = {Ibuta, Naoomi and Sagara, Fumihiko and Doi, Kentaro and Nakamura, Koichi and Tachibana, Akitomo and Ishihara, Yoshio and Suzuki, Katsumasa},
+  doi       = {10.1143/jjap.44.4133},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {June},
+  number    = {6R},
+  pages     = {4133},
+  publisher = {IOP Publishing},
+  title     = {Reaction Processes of Germane Molecules with Catalytic Water},
+  url       = {http://dx.doi.org/10.1143/JJAP.44.4133},
+  volume    = {44},
+  year      = {2005}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.44.6115">
+                     Structures and Electronic States of Gadolinium Oxide Clusters</a></strong>,<br>
+                     K. Doi, K. Fujitani, N. Kadowaki, K. Nakamura, A. Tachibana, T. Hattori, Japanese Journal of Applied Physics 44, 6115 (2005).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent124')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent124" class="bibtex">
+@article{Doi_2005,
+  author    = {Doi, Kentaro and Fujitani, Kiwamu and Kadowaki, Naoki and Nakamura, Koichi and Tachibana, Akitomo and Hattori, Takeo},
+  doi       = {10.1143/jjap.44.6115},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {August},
+  number    = {8R},
+  pages     = {6115},
+  publisher = {IOP Publishing},
+  title     = {Structures and Electronic States of Gadolinium Oxide Clusters},
+  url       = {http://dx.doi.org/10.1143/JJAP.44.6115},
+  volume    = {44},
+  year      = {2005}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.2138381">
+                     Ab initio calculation of electron effective masses in solid pentacene</a></strong>,<br>
+                     K. Doi, K. Yoshida, H. Nakano, A. Tachibana, T. Tanabe, Y. Kojima, K. Okazaki, Journal of Applied Physics 98,  (2005).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent125')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent125" class="bibtex">
+@article{Doi_2005,
+  author    = {Doi, K. and Yoshida, K. and Nakano, H. and Tachibana, A. and Tanabe, T. and Kojima, Y. and Okazaki, K.},
+  doi       = {10.1063/1.2138381},
+  issn      = {1089-7550},
+  journal   = {Journal of Applied Physics},
+  month     = {December},
+  number    = {11},
+  publisher = {AIP Publishing},
+  title     = {Ab initio calculation of electron effective masses in solid pentacene},
+  url       = {http://dx.doi.org/10.1063/1.2138381},
+  volume    = {98},
+  year      = {2005}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.jpowsour.2006.04.023">
+                     First-principle molecular-dynamics study of hydrogen adsorption on an aluminum-doped carbon nanotube</a></strong>,<br>
+                     H. Nakano, H. Ohta, A. Yokoe, K. Doi, A. Tachibana, Journal of Power Sources 163, 125–134 (2006).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent126')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent126" class="bibtex">
+@article{Nakano_2006,
+  author    = {Nakano, Hiroshi and Ohta, Hirokazu and Yokoe, Akira and Doi, Kentaro and Tachibana, Akitomo},
+  doi       = {10.1016/j.jpowsour.2006.04.023},
+  issn      = {0378-7753},
+  journal   = {Journal of Power Sources},
+  month     = {December},
+  number    = {1},
+  pages     = {125–134},
+  publisher = {Elsevier BV},
+  title     = {First-principle molecular-dynamics study of hydrogen adsorption on an aluminum-doped carbon nanotube},
+  url       = {http://dx.doi.org/10.1016/j.jpowsour.2006.04.023},
+  volume    = {163},
+  year      = {2006}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.4028/www.scientific.net/MSF.539-543.1409">
+                     First-Principle Molecular-Dynamics Study of Hydrogen and Aluminium Nanowires in Carbon Nanotubes</a></strong>,<br>
+                     K. Doi, H. Nakano, H. Ohta, A. Tachibana, Materials Science Forum 539–543, 1409–1414 (2007).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent128')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent128" class="bibtex">
+@article{Doi_2007,
+  author    = {Doi, Kentaro and Nakano, Hiroshi and Ohta, Hirokazu and Tachibana, Akitomo},
+  doi       = {10.4028/www.scientific.net/msf.539-543.1409},
+  issn      = {1662-9752},
+  journal   = {Materials Science Forum},
+  month     = {March},
+  pages     = {1409–1414},
+  publisher = {Trans Tech Publications, Ltd.},
+  title     = {First-Principle Molecular-Dynamics Study of Hydrogen and Aluminium Nanowires in Carbon Nanotubes},
+  url       = {http://dx.doi.org/10.4028/www.scientific.net/MSF.539-543.1409},
+  volume    = {539–543},
+  year      = {2007}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/pssc.200674798">
+                     First‐principle study on crystal growth of Ga and N layers on GaN substrate</a></strong>,<br>
+                     K. Doi, N. Maida, K. Kimura, A. Tachibana, physica status solidi c 4, 2293–2296 (2007).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent129')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent129" class="bibtex">
+@article{Doi_2007,
+  author    = {Doi, K. and Maida, N. and Kimura, K. and Tachibana, A.},
+  doi       = {10.1002/pssc.200674798},
+  issn      = {1610-1642},
+  journal   = {physica status solidi c},
+  month     = {June},
+  number    = {7},
+  pages     = {2293–2296},
+  publisher = {Wiley},
+  title     = {First‐principle study on crystal growth of Ga and N layers on GaN substrate},
+  url       = {http://dx.doi.org/10.1002/pssc.200674798},
+  volume    = {4},
+  year      = {2007}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s00894-007-0215-6">
+                     The field theoretical study of chemical interaction in terms of the Rigged QED: new reactivity indices</a></strong>,<br>
+                     P. Szarek, A. Tachibana, Journal of Molecular Modeling 13, 651–663 (2007).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent130')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent130" class="bibtex">
+@article{Szarek_2007,
+  author    = {Szarek, Paweł and Tachibana, Akitomo},
+  doi       = {10.1007/s00894-007-0215-6},
+  issn      = {0948-5023},
+  journal   = {Journal of Molecular Modeling},
+  month     = {May},
+  number    = {6–7},
+  pages     = {651–663},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {The field theoretical study of chemical interaction in terms of the Rigged QED: new reactivity indices},
+  url       = {http://dx.doi.org/10.1007/s00894-007-0215-6},
+  volume    = {13},
+  year      = {2007}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.47.205">
+                     Electronic Structure Study of Local Dielectric Properties of Lanthanoid Oxide Clusters</a></strong>,<br>
+                     K. Doi, Y. Mikazuki, S. Sugino, T. Doi, P. Szarek, M. Senami, K. Shiraishi, H. Iwai, N. Umezawa, T. Chikyo, K. Yamada, A. Tachibana, Japanese Journal of Applied Physics 47, 205 (2008).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent132')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent132" class="bibtex">
+@article{Doi_2008,
+  author    = {Doi, Kentaro and Mikazuki, Yutaka and Sugino, Shinya and Doi, Tatsuki and Szarek, Pawel and Senami, Masato and Shiraishi, Kenji and Iwai, Hiroshi and Umezawa, Naoto and Chikyo, Toyohiro and Yamada, Keisaku and Tachibana, Akitomo},
+  doi       = {10.1143/jjap.47.205},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {January},
+  number    = {1R},
+  pages     = {205},
+  publisher = {IOP Publishing},
+  title     = {Electronic Structure Study of Local Dielectric Properties of Lanthanoid Oxide Clusters},
+  url       = {http://dx.doi.org/10.1143/JJAP.47.205},
+  volume    = {47},
+  year      = {2008}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.jpowsour.2008.05.084">
+                     Theoretical study of the hydrogen adsorption on AlB nanowire</a></strong>,<br>
+                     A. Fukushima, K. Doi, M. Senami, A. Tachibana, Journal of Power Sources 184, 60–76 (2008).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent133')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent133" class="bibtex">
+@article{Fukushima_2008,
+  author    = {Fukushima, Akinori and Doi, Kentaro and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1016/j.jpowsour.2008.05.084},
+  issn      = {0378-7753},
+  journal   = {Journal of Power Sources},
+  month     = {September},
+  number    = {1},
+  pages     = {60–76},
+  publisher = {Elsevier BV},
+  title     = {Theoretical study of the hydrogen adsorption on AlB nanowire},
+  url       = {http://dx.doi.org/10.1016/j.jpowsour.2008.05.084},
+  volume    = {184},
+  year      = {2008}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.2973634">
+                     Electronic stress tensor description of chemical bonds using nonclassical bond order concept</a></strong>,<br>
+                     P. Szarek, Y. Sueda, A. Tachibana, The Journal of Chemical Physics 129,  (2008).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent134')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent134" class="bibtex">
+@article{Szarek_2008,
+  author    = {Szarek, Paweł and Sueda, Yutaka and Tachibana, Akitomo},
+  doi       = {10.1063/1.2973634},
+  issn      = {1089-7690},
+  journal   = {The Journal of Chemical Physics},
+  month     = {September},
+  number    = {9},
+  publisher = {AIP Publishing},
+  title     = {Electronic stress tensor description of chemical bonds using nonclassical bond order concept},
+  url       = {http://dx.doi.org/10.1063/1.2973634},
+  volume    = {129},
+  year      = {2008}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1021/jp8040633">
+                     Physical Nature of Intermolecular Interactions within cAMP-Dependent Protein Kinase Active Site: Differential Transition State Stabilization in Phosphoryl Transfer Reaction</a></strong>,<br>
+                     P. Szarek, E. Dyguda-Kazimierowicz, A. Tachibana, W. Sokalski, The Journal of Physical Chemistry B 112, 11819–11826 (2008).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent135')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent135" class="bibtex">
+@article{Szarek_2008,
+  author    = {Szarek, Pawel and Dyguda-Kazimierowicz, Edyta and Tachibana, Akitomo and Sokalski, W. Andrzej},
+  doi       = {10.1021/jp8040633},
+  issn      = {1520-5207},
+  journal   = {The Journal of Physical Chemistry B},
+  month     = {August},
+  number    = {37},
+  pages     = {11819–11826},
+  publisher = {American Chemical Society (ACS)},
+  title     = {Physical Nature of Intermolecular Interactions within cAMP-Dependent Protein Kinase Active Site: Differential Transition State Stabilization in Phosphoryl Transfer Reaction},
+  url       = {http://dx.doi.org/10.1021/jp8040633},
+  volume    = {112},
+  year      = {2008}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.3072369">
+                     On reversible bonding of hydrogen molecules on platinum clusters</a></strong>,<br>
+                     P. Szarek, K. Urakami, C. Zhou, H. Cheng, A. Tachibana, The Journal of Chemical Physics 130,  (2009).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent136')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent136" class="bibtex">
+@article{Szarek_2009,
+  author    = {Szarek, Paweł and Urakami, Kousuke and Zhou, Chenggang and Cheng, Hansong and Tachibana, Akitomo},
+  doi       = {10.1063/1.3072369},
+  issn      = {1089-7690},
+  journal   = {The Journal of Chemical Physics},
+  month     = {February},
+  number    = {8},
+  publisher = {AIP Publishing},
+  title     = {On reversible bonding of hydrogen molecules on platinum clusters},
+  url       = {http://dx.doi.org/10.1063/1.3072369},
+  volume    = {130},
+  year      = {2009}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.theochem.2009.08.026">
+                     A theoretical study on a reaction of iron(III) hydroxide with boron trichloride by ab initio calculation</a></strong>,<br>
+                     K. Ichikawa, T. Myoraku, A. Fukushima, Y. Ishihara, R. Isaki, T. Takeguchi, A. Tachibana, Journal of Molecular Structure: THEOCHEM 915, 1–10 (2009).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent138')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent138" class="bibtex">
+@article{Ichikawa_2009,
+  author    = {Ichikawa, Kazuhide and Myoraku, Toshiyuki and Fukushima, Akinori and Ishihara, Yoshio and Isaki, Ryuichiro and Takeguchi, Toshio and Tachibana, Akitomo},
+  doi       = {10.1016/j.theochem.2009.08.026},
+  issn      = {0166-1280},
+  journal   = {Journal of Molecular Structure: THEOCHEM},
+  month     = {December},
+  number    = {1–3},
+  pages     = {1–10},
+  publisher = {Elsevier BV},
+  title     = {A theoretical study on a reaction of iron(III) hydroxide with boron trichloride by ab initio calculation},
+  url       = {http://dx.doi.org/10.1016/j.theochem.2009.08.026},
+  volume    = {915},
+  year      = {2009}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1103/PhysRevA.80.062507">
+                     Stress tensor of the hydrogen molecular ion</a></strong>,<br>
+                     K. Ichikawa, A. Tachibana, Physical Review A 80,  (2009).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent139')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent139" class="bibtex">
+@article{Ichikawa_2009,
+  author    = {Ichikawa, Kazuhide and Tachibana, Akitomo},
+  doi       = {10.1103/physreva.80.062507},
+  issn      = {1094-1622},
+  journal   = {Physical Review A},
+  month     = {December},
+  number    = {6},
+  publisher = {American Physical Society (APS)},
+  title     = {Stress tensor of the hydrogen molecular ion},
+  url       = {http://dx.doi.org/10.1103/PhysRevA.80.062507},
+  volume    = {80},
+  year      = {2009}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.theochem.2009.11.018">
+                     Energy density concept: A stress tensor approach</a></strong>,<br>
+                     A. Tachibana, Journal of Molecular Structure: THEOCHEM 943, 138–151 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent140')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent140" class="bibtex">
+@article{Tachibana_2010,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1016/j.theochem.2009.11.018},
+  issn      = {0166-1280},
+  journal   = {Journal of Molecular Structure: THEOCHEM},
+  month     = {March},
+  number    = {1–3},
+  pages     = {138–151},
+  publisher = {Elsevier BV},
+  title     = {Energy density concept: A stress tensor approach},
+  url       = {http://dx.doi.org/10.1016/j.theochem.2009.11.018},
+  volume    = {943},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 145 Eq. (5.25) for $\hat{A}_{M} (x)$ 
+                            read $\hat{A}_{0_M} (x)$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.4028/www.scientific.net/MSF.638-642.1137">
+                     Electronic Stress Tensor Study of Aluminum Nanostructures for Hydrogen Storage</a></strong>,<br>
+                     P. Szarek, K. Watanabe, K. Ichikawa, A. Tachibana, Materials Science Forum 638–642, 1137–1142 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent141')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent141" class="bibtex">
+@article{Szarek_2010,
+  author    = {Szarek, Pawel and Watanabe, Kouhei and Ichikawa, Kazuhide and Tachibana, Akitomo},
+  doi       = {10.4028/www.scientific.net/msf.638-642.1137},
+  issn      = {1662-9752},
+  journal   = {Materials Science Forum},
+  month     = {January},
+  pages     = {1137–1142},
+  publisher = {Trans Tech Publications, Ltd.},
+  title     = {Electronic Stress Tensor Study of Aluminum Nanostructures for Hydrogen Storage},
+  url       = {http://dx.doi.org/10.4028/www.scientific.net/MSF.638-642.1137},
+  volume    = {638–642},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.theochem.2010.04.007">
+                     Electronic stress tensor of the hydrogen molecular ion: Comparison between the exact wave function and approximate wave functions using Gaussian basis sets</a></strong>,<br>
+                     K. Ichikawa, A. Wagatsuma, M. Kusumoto, A. Tachibana, Journal of Molecular Structure: THEOCHEM 951, 49–59 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent142')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent142" class="bibtex">
+@article{Ichikawa_2010,
+  author    = {Ichikawa, Kazuhide and Wagatsuma, Ayumu and Kusumoto, Masashi and Tachibana, Akitomo},
+  doi       = {10.1016/j.theochem.2010.04.007},
+  issn      = {0166-1280},
+  journal   = {Journal of Molecular Structure: THEOCHEM},
+  month     = {July},
+  number    = {1–3},
+  pages     = {49–59},
+  publisher = {Elsevier BV},
+  title     = {Electronic stress tensor of the hydrogen molecular ion: Comparison between the exact wave function and approximate wave functions using Gaussian basis sets},
+  url       = {http://dx.doi.org/10.1016/j.theochem.2010.04.007},
+  volume    = {951},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JPSJ.79.084302">
+                     Spin Torque and Zeta Force of Dimer of Alkali Atoms</a></strong>,<br>
+                     M. Senami, J. Nishikawa, T. Hara, A. Tachibana, Journal of the Physical Society of Japan 79, 084302 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent143')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent143" class="bibtex">
+@article{Senami_2010,
+  author    = {Senami, Masato and Nishikawa, Jun and Hara, Takaaki and Tachibana, Akitomo},
+  doi       = {10.1143/jpsj.79.084302},
+  issn      = {1347-4073},
+  journal   = {Journal of the Physical Society of Japan},
+  month     = {August},
+  number    = {8},
+  pages     = {084302},
+  publisher = {Physical Society of Japan},
+  title     = {Spin Torque and Zeta Force of Dimer of Alkali Atoms},
+  url       = {http://dx.doi.org/10.1143/JPSJ.79.084302},
+  volume    = {79},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+
+            <details class="errata">
+                <summary><a href="./errata/spin.html" target="_blank">ERRATA</a></summary>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.susc.2010.06.021">
+                     Theoretical study of the migration of the hydrogen atom adsorbed on aluminum nanowire</a></strong>,<br>
+                     A. Fukushima, K. Hirai, M. Senami, A. Tachibana, Surface Science 604, 1718–1726 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent144')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent144" class="bibtex">
+@article{Fukushima_2010,
+  author    = {Fukushima, Akinori and Hirai, Kosuke and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1016/j.susc.2010.06.021},
+  issn      = {0039-6028},
+  journal   = {Surface Science},
+  month     = {September},
+  number    = {19–20},
+  pages     = {1718–1726},
+  publisher = {Elsevier BV},
+  title     = {Theoretical study of the migration of the hydrogen atom adsorbed on aluminum nanowire},
+  url       = {http://dx.doi.org/10.1016/j.susc.2010.06.021},
+  volume    = {604},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.49.115002">
+                     Calculation of the Electronic State in Electronic Current for Nanowire Models</a></strong>,<br>
+                     M. Senami, Y. Ikeda, A. Fukushima, A. Tachibana, Japanese Journal of Applied Physics 49, 115002 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent145')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent145" class="bibtex">
+@article{Senami_2010,
+  author    = {Senami, Masato and Ikeda, Yuji and Fukushima, Akinori and Tachibana, Akitomo},
+  doi       = {10.1143/jjap.49.115002},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {November},
+  number    = {11R},
+  pages     = {115002},
+  publisher = {IOP Publishing},
+  title     = {Calculation of the Electronic State in Electronic Current for Nanowire Models},
+  url       = {http://dx.doi.org/10.1143/JJAP.49.115002},
+  volume    = {49},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.49.121504">
+                     Local Dielectric Property of Hafnium and Lanthanum Atoms in HfLaOx</a></strong>,<br>
+                     A. Fukushima, S. Sugino, Y. Tsuchida, M. Senami, A. Tachibana, Japanese Journal of Applied Physics 49, 121504 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent146')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent146" class="bibtex">
+@article{Fukushima_2010,
+  author    = {Fukushima, Akinori and Sugino, Shinya and Tsuchida, Yasushi and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1143/jjap.49.121504},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {December},
+  number    = {12R},
+  pages     = {121504},
+  publisher = {IOP Publishing},
+  title     = {Local Dielectric Property of Hafnium and Lanthanum Atoms in HfLaOx},
+  url       = {http://dx.doi.org/10.1143/JJAP.49.121504},
+  volume    = {49},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.50.010103">
+                     Local Transport Property of GaN Cluster as a Model of Nanowire</a></strong>,<br>
+                     M. Senami, Y. Ikeda, A. Tachibana, Japanese Journal of Applied Physics 50, 010103 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent148')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent148" class="bibtex">
+@article{Senami_2011,
+  author    = {Senami, Masato and Ikeda, Yuji and Tachibana, Akitomo},
+  doi       = {10.1143/jjap.50.010103},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {January},
+  number    = {1R},
+  pages     = {010103},
+  publisher = {IOP Publishing},
+  title     = {Local Transport Property of GaN Cluster as a Model of Nanowire},
+  url       = {http://dx.doi.org/10.1143/JJAP.50.010103},
+  volume    = {50},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.22848">
+                     Theoretical study of hydrogenated tetrahedral aluminum clusters</a></strong>,<br>
+                     K. Ichikawa, Y. Ikeda, A. Wagatsuma, K. Watanabe, P. Szarek, A. Tachibana, International Journal of Quantum Chemistry 111, 3548–3555 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent149')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent149" class="bibtex">
+@article{Ichikawa_2010,
+  author    = {Ichikawa, Kazuhide and Ikeda, Yuji and Wagatsuma, Ayumu and Watanabe, Kouhei and Szarek, Paweł and Tachibana, Akitomo},
+  doi       = {10.1002/qua.22848},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {October},
+  number    = {14},
+  pages     = {3548–3555},
+  publisher = {Wiley},
+  title     = {Theoretical study of hydrogenated tetrahedral aluminum clusters},
+  url       = {http://dx.doi.org/10.1002/qua.22848},
+  volume    = {111},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1021/jp109804y">
+                     Reactivity and Regioselectivity of Aluminum Nanoclusters: Insights from Regional Density Functional Theory</a></strong>,<br>
+                     D. Henry, P. Szarek, K. Hirai, K. Ichikawa, A. Tachibana, I. Yarovsky, The Journal of Physical Chemistry C 115, 1714–1723 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent150')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent150" class="bibtex">
+@article{Henry_2011,
+  author    = {Henry, David J. and Szarek, Paweł and Hirai, Kosuke and Ichikawa, Kazuhide and Tachibana, Akitomo and Yarovsky, Irene},
+  doi       = {10.1021/jp109804y},
+  issn      = {1932-7455},
+  journal   = {The Journal of Physical Chemistry C},
+  month     = {January},
+  number    = {5},
+  pages     = {1714–1723},
+  publisher = {American Chemical Society (ACS)},
+  title     = {Reactivity and Regioselectivity of Aluminum Nanoclusters: Insights from Regional Density Functional Theory},
+  url       = {http://dx.doi.org/10.1021/jp109804y},
+  volume    = {115},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s00214-011-0966-0">
+                     Inverted-sandwich-type and open-lantern-type dinuclear transition metal complexes: theoretical study of chemical bonds by electronic stress tensor</a></strong>,<br>
+                     K. Ichikawa, A. Wagatsuma, Y. Kurokawa, S. Sakaki, A. Tachibana, Theoretical Chemistry Accounts 130, 237–250 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent151')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent151" class="bibtex">
+@article{Ichikawa_2011,
+  author    = {Ichikawa, Kazuhide and Wagatsuma, Ayumu and Kurokawa, Yusaku I. and Sakaki, Shigeyoshi and Tachibana, Akitomo},
+  doi       = {10.1007/s00214-011-0966-0},
+  issn      = {1432-2234},
+  journal   = {Theoretical Chemistry Accounts},
+  month     = {June},
+  number    = {2–3},
+  pages     = {237–250},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {Inverted-sandwich-type and open-lantern-type dinuclear transition metal complexes: theoretical study of chemical bonds by electronic stress tensor},
+  url       = {http://dx.doi.org/10.1007/s00214-011-0966-0},
+  volume    = {130},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.4028/www.scientific.net/KEM.470.66">
+                     Nanosize Electronics Material Analysis by Local Quantities Based on the Rigged QED Theory</a></strong>,<br>
+                     M. Senami, Y. Ikeda, T. Hara, A. Tachibana, Key Engineering Materials 470, 66–71 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent152')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent152" class="bibtex">
+@article{Senami_2011,
+  author    = {Senami, Masato and Ikeda, Yuji and Hara, Takaaki and Tachibana, Akitomo},
+  doi       = {10.4028/www.scientific.net/kem.470.66},
+  issn      = {1662-9795},
+  journal   = {Key Engineering Materials},
+  month     = {February},
+  pages     = {66–71},
+  publisher = {Trans Tech Publications, Ltd.},
+  title     = {Nanosize Electronics Material Analysis by Local Quantities Based on the Rigged QED Theory},
+  url       = {http://dx.doi.org/10.4028/www.scientific.net/KEM.470.66},
+  volume    = {470},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JPSJ.80.074705">
+                     Role of an Aluminum Atom on Graphene for Hydrogen Adsorption</a></strong>,<br>
+                     A. Fukushima, A. Sawairi, K. Doi, M. Senami, L. Chen, H. Cheng, A. Tachibana, Journal of the Physical Society of Japan 80, 074705 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent153')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent153" class="bibtex">
+@article{Fukushima_2011,
+  author    = {Fukushima, Akinori and Sawairi, Akira and Doi, Kentaro and Senami, Masato and Chen, Liang and Cheng, Hansong and Tachibana, Akitomo},
+  doi       = {10.1143/jpsj.80.074705},
+  issn      = {1347-4073},
+  journal   = {Journal of the Physical Society of Japan},
+  month     = {July},
+  number    = {7},
+  pages     = {074705},
+  publisher = {Physical Society of Japan},
+  title     = {Role of an Aluminum Atom on Graphene for Hydrogen Adsorption},
+  url       = {http://dx.doi.org/10.1143/JPSJ.80.074705},
+  volume    = {80},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.50.125601">
+                     Theoretical Study of Gallium Nitride Crystal Growth Reaction Mechanism</a></strong>,<br>
+                     Y. Ikeda, N. Ohmori, N. Maida, M. Senami, A. Tachibana, Japanese Journal of Applied Physics 50, 125601 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent154')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent154" class="bibtex">
+@article{Ikeda_2011,
+  author    = {Ikeda, Yuji and Ohmori, Norifumi and Maida, Noriaki and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1143/jjap.50.125601},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {November},
+  number    = {12R},
+  pages     = {125601},
+  publisher = {IOP Publishing},
+  title     = {Theoretical Study of Gallium Nitride Crystal Growth Reaction Mechanism},
+  url       = {http://dx.doi.org/10.1143/JJAP.50.125601},
+  volume    = {50},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s00214-011-1044-3">
+                     Electronic stress tensor analysis of hydrogenated palladium clusters</a></strong>,<br>
+                     K. Ichikawa, A. Wagatsuma, P. Szarek, C. Zhou, H. Cheng, A. Tachibana, Theoretical Chemistry Accounts 130, 531–542 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent155')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent155" class="bibtex">
+@article{Ichikawa_2011,
+  author    = {Ichikawa, Kazuhide and Wagatsuma, Ayumu and Szarek, Paweł and Zhou, Chenggang and Cheng, Hansong and Tachibana, Akitomo},
+  doi       = {10.1007/s00214-011-1044-3},
+  issn      = {1432-2234},
+  journal   = {Theoretical Chemistry Accounts},
+  month     = {October},
+  number    = {2–3},
+  pages     = {531–542},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {Electronic stress tensor analysis of hydrogenated palladium clusters},
+  url       = {http://dx.doi.org/10.1007/s00214-011-1044-3},
+  volume    = {130},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.3651182">
+                     Theoretical study of adsorption of lithium atom on carbon nanotube</a></strong>,<br>
+                     M. Senami, Y. Ikeda, A. Fukushima, A. Tachibana, AIP Advances 1,  (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent156')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent156" class="bibtex">
+@article{Senami_2011,
+  author    = {Senami, Masato and Ikeda, Yuji and Fukushima, Akinori and Tachibana, Akitomo},
+  doi       = {10.1063/1.3651182},
+  issn      = {2158-3226},
+  journal   = {AIP Advances},
+  month     = {October},
+  number    = {4},
+  publisher = {AIP Publishing},
+  title     = {Theoretical study of adsorption of lithium atom on carbon nanotube},
+  url       = {http://dx.doi.org/10.1063/1.3651182},
+  volume    = {1},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s10910-011-9943-z">
+                     General relativistic symmetry of electron spin torque</a></strong>,<br>
+                     A. Tachibana, Journal of Mathematical Chemistry 50, 669–688 (2011).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent157')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent157" class="bibtex">
+@article{Tachibana_2011,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1007/s10910-011-9943-z},
+  issn      = {1572-8897},
+  journal   = {Journal of Mathematical Chemistry},
+  month     = {November},
+  number    = {4},
+  pages     = {669–688},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {General relativistic symmetry of electron spin torque},
+  url       = {http://dx.doi.org/10.1007/s10910-011-9943-z},
+  volume    = {50},
+  year      = {2011}
+}
+
+                </pre>
+                
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li> 
+                            Page 676 Eq.(63) for $\frac{\hbar c^2}{2}$
+                            read $\frac{\hbar c}{2}$
+                        </li>
+                        <li> 
+                            Page 685 Eq.(C6) for $\phi^2$
+                            read $\phi$ 
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1143/JJAP.51.031101">
+                     Local Dielectric Property of Cubic, Tetragonal, and Monoclinic Hafnium Oxides</a></strong>,<br>
+                     M. Senami, Y. Tsuchida, A. Fukushima, Y. Ikeda, A. Tachibana, Japanese Journal of Applied Physics 51, 031101 (2012).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent158')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent158" class="bibtex">
+@article{Senami_2012,
+  author    = {Senami, Masato and Tsuchida, Yasushi and Fukushima, Akinori and Ikeda, Yuji and Tachibana, Akitomo},
+  doi       = {10.1143/jjap.51.031101},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {February},
+  number    = {3R},
+  pages     = {031101},
+  publisher = {IOP Publishing},
+  title     = {Local Dielectric Property of Cubic, Tetragonal, and Monoclinic Hafnium Oxides},
+  url       = {http://dx.doi.org/10.1143/JJAP.51.031101},
+  volume    = {51},
+  year      = {2012}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.4028/www.scientific.net/MSF.706-709.1539">
+                     Aluminum Hydride Clusters as Hydrogen Storage Materials and their Electronic Stress Tensor Analysis</a></strong>,<br>
+                     K. Ichikawa, Y. Ikeda, R. Terashima, A. Tachibana, Materials Science Forum 706–709, 1539–1544 (2012).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent159')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent159" class="bibtex">
+@article{Ichikawa_2012,
+  author    = {Ichikawa, Kazuhide and Ikeda, Yuji and Terashima, Ryo and Tachibana, Akitomo},
+  doi       = {10.4028/www.scientific.net/msf.706-709.1539},
+  issn      = {1662-9752},
+  journal   = {Materials Science Forum},
+  month     = {January},
+  pages     = {1539–1544},
+  publisher = {Trans Tech Publications, Ltd.},
+  title     = {Aluminum Hydride Clusters as Hydrogen Storage Materials and their Electronic Stress Tensor Analysis},
+  url       = {http://dx.doi.org/10.4028/www.scientific.net/MSF.706-709.1539},
+  volume    = {706–709},
+  year      = {2012}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.physleta.2012.03.028">
+                     Electron spin torque in atoms</a></strong>,<br>
+                     T. Hara, M. Senami, A. Tachibana, Physics Letters A 376, 1434–1441 (2012).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent160')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent160" class="bibtex">
+@article{Hara_2012,
+  author    = {Hara, Takaaki and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1016/j.physleta.2012.03.028},
+  issn      = {0375-9601},
+  journal   = {Physics Letters A},
+  month     = {March},
+  number    = {17},
+  pages     = {1434–1441},
+  publisher = {Elsevier BV},
+  title     = {Electron spin torque in atoms},
+  url       = {http://dx.doi.org/10.1016/j.physleta.2012.03.028},
+  volume    = {376},
+  year      = {2012}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.4774037">
+                     Theoretical study of lithium clusters by electronic stress tensor</a></strong>,<br>
+                     K. Ichikawa, H. Nozaki, N. Komazawa, A. Tachibana, AIP Advances 2,  (2012).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent161')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent161" class="bibtex">
+@article{Ichikawa_2012,
+  author    = {Ichikawa, Kazuhide and Nozaki, Hiroo and Komazawa, Naoya and Tachibana, Akitomo},
+  doi       = {10.1063/1.4774037},
+  issn      = {2158-3226},
+  journal   = {AIP Advances},
+  month     = {December},
+  number    = {4},
+  publisher = {AIP Publishing},
+  title     = {Theoretical study of lithium clusters by electronic stress tensor},
+  url       = {http://dx.doi.org/10.1063/1.4774037},
+  volume    = {2},
+  year      = {2012}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.4769887">
+                     Local electric conductive property of Si nanowire models</a></strong>,<br>
+                     Y. Ikeda, M. Senami, A. Tachibana, AIP Advances 2,  (2012).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent162')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent162" class="bibtex">
+@article{Ikeda_2012,
+  author    = {Ikeda, Yuji and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1063/1.4769887},
+  issn      = {2158-3226},
+  journal   = {AIP Advances},
+  month     = {November},
+  number    = {4},
+  publisher = {AIP Publishing},
+  title     = {Local electric conductive property of Si nanowire models},
+  url       = {http://dx.doi.org/10.1063/1.4769887},
+  volume    = {2},
+  year      = {2012}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.24087">
+                     Study of simulation method of time evolution in rigged QED</a></strong>,<br>
+                     K. Ichikawa, M. Fukuda, A. Tachibana, International Journal of Quantum Chemistry 113, 190–202 (2012).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent163')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent163" class="bibtex">
+@article{Ichikawa_2012,
+  author    = {Ichikawa, Kazuhide and Fukuda, Masahiro and Tachibana, Akitomo},
+  doi       = {10.1002/qua.24087},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {April},
+  number    = {3},
+  pages     = {190–202},
+  publisher = {Wiley},
+  title     = {Study of simulation method of time evolution in rigged QED},
+  url       = {http://dx.doi.org/10.1002/qua.24087},
+  volume    = {113},
+  year      = {2012}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1088/1742-6596/454/1/012052">
+                     Time evolution of Heisenberg operators of nuclei and electrons of QED system based on field theory</a></strong>,<br>
+                     M. Senami, T. Miyazato, S. Takada, Y. Ikeda, A. Tachibana, Journal of Physics: Conference Series 454, 012052 (2013).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent164')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent164" class="bibtex">
+@article{Senami_2013,
+  author    = {Senami, Masato and Miyazato, Toshihide and Takada, Soujirou and Ikeda, Yuji and Tachibana, Akitomo},
+  doi       = {10.1088/1742-6596/454/1/012052},
+  issn      = {1742-6596},
+  journal   = {Journal of Physics: Conference Series},
+  month     = {August},
+  pages     = {012052},
+  publisher = {IOP Publishing},
+  title     = {Time evolution of Heisenberg operators of nuclei and electrons of QED system based on field theory},
+  url       = {http://dx.doi.org/10.1088/1742-6596/454/1/012052},
+  volume    = {454},
+  year      = {2013}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1088/1742-6596/454/1/012053">
+                     Coupled perturbed Hartree-Fock method for non-Hermitian Hamiltonians</a></strong>,<br>
+                     Y. Ikeda, M. Senami, A. Tachibana, Journal of Physics: Conference Series 454, 012053 (2013).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent165')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent165" class="bibtex">
+@article{Ikeda_2013,
+  author    = {Ikeda, Yuji and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1088/1742-6596/454/1/012053},
+  issn      = {1742-6596},
+  journal   = {Journal of Physics: Conference Series},
+  month     = {August},
+  pages     = {012053},
+  publisher = {IOP Publishing},
+  title     = {Coupled perturbed Hartree-Fock method for non-Hermitian Hamiltonians},
+  url       = {http://dx.doi.org/10.1088/1742-6596/454/1/012053},
+  volume    = {454},
+  year      = {2013}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.14723/tmrsj.38.397">
+                     A Non-Hermitian Coupled Perturbed Hartree-Fock Method for Complex Potentials and Calculations of Electronic Structures with Electric Currents</a></strong>,<br>
+                     Y. Ikeda, M. Senami, A. Tachibana, Transactions of the Materials Research Society of Japan 38, 397–404 (2013).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent167')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent167" class="bibtex">
+@article{Ikeda_2013,
+  author    = {Ikeda, Yuji and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.14723/tmrsj.38.397},
+  issn      = {2188-1650},
+  journal   = {Transactions of the Materials Research Society of Japan},
+  number    = {3},
+  pages     = {397–404},
+  publisher = {The Materials Research Society of Japan},
+  title     = {A Non-Hermitian Coupled Perturbed Hartree-Fock Method for Complex Potentials and Calculations of Electronic Structures with Electric Currents},
+  url       = {http://dx.doi.org/10.14723/tmrsj.38.397},
+  volume    = {38},
+  year      = {2013}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.14723/tmrsj.38.535">
+                     Rigged QED Analysis of Local Dielectric Response</a></strong>,<br>
+                     M. Senami, Y. Ogiso, T. Miyazato, F. Yoshino, Y. Ikeda, A. Tachibana, Transactions of the Materials Research Society of Japan 38, 535–544 (2013).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent168')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent168" class="bibtex">
+@article{Senami_2013,
+  author    = {Senami, Masato and Ogiso, Youji and Miyazato, Toshihide and Yoshino, Fumiya and Ikeda, Yuji and Tachibana, Akitomo},
+  doi       = {10.14723/tmrsj.38.535},
+  issn      = {2188-1650},
+  journal   = {Transactions of the Materials Research Society of Japan},
+  number    = {4},
+  pages     = {535–544},
+  publisher = {The Materials Research Society of Japan},
+  title     = {Rigged QED Analysis of Local Dielectric Response},
+  url       = {http://dx.doi.org/10.14723/tmrsj.38.535},
+  volume    = {38},
+  year      = {2013}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.2477/jccj.2013-0012">
+                     Stress Tensor of Electron as Energy Density with Spin Vorticity</a></strong>,<br>
+                     A. TACHIBANA, Journal of Computer Chemistry, Japan 13, 18–31 (2014).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent169')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent169" class="bibtex">
+@article{TACHIBANA_2014,
+  author    = {TACHIBANA, Akitomo},
+  doi       = {10.2477/jccj.2013-0012},
+  issn      = {1347-3824},
+  journal   = {Journal of Computer Chemistry, Japan},
+  number    = {1},
+  pages     = {18–31},
+  publisher = {Society of Computer Chemistry Japan},
+  title     = {Stress Tensor of Electron as Energy Density with Spin Vorticity},
+  url       = {http://dx.doi.org/10.2477/jccj.2013-0012},
+  volume    = {13},
+  year      = {2014}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/191144">
+                    Electronic stress tensor of chemical bond</a></strong>, 
+                    A. Tachibana, Indian Journal of Chemistry Vol. 53A, Aug-Sept 2014, pp. 1031-1035.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent8')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent8" class="bibtex">
+@article{Tachibana2014,
+  author    = {Tachibana, Akitomo},
+  title     = {Electronic stress tensor of chemical bond},
+  journal   = {Indian Journal of Chemistry},
+  year      = {2014},
+  volume    = {53A},
+  pages     = {1031--1035},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li> 
+                            Page 1032 Eq.(8) for ++ read  +
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(26) for ++ read  +
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(27) for $\tau$ read $\tau^{\Pi}_{\mu \nu}$
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(27) for $\gamma$ read $\gamma_\nu$ 
+                        </li>
+                        <li> 
+                            Page 1033 Eq.(27) for $D$ read $D_\mu$
+                        </li>
+                        <li> 
+                            Page 1034 line 1 below Eq. (42) for "is the linear superfield"
+                            read "is represented by the linear superfield $\bar{\cal D} \Xi (x)$"
+                        </li>
+                        <li>
+                            Page 1034 Eq. (43) for $\bar{d}$ read $\bar{\cal D}$
+                        </li>
+                        <li> 
+                            Suppl Data Appendix - SD Eq. (72) for $i\hbar$ read $i$ 
+                        </li>
+                        <li> 
+                            Suppl Data Appendix - SD Eq. (73) for $i\hbar$ read $i$
+                        </li>
+                        <li> 
+                            Suppl Data Appendix - SD line 1 below Eq. (73) for $q$ read $\cal{Q}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.4028/www.scientific.net/MSF.783-786.2207">
+                     Use of Electronic Stress Tensor Density and Energy Density in Chemistry</a></strong>,<br>
+                     K. Ichikawa, H. Nozaki, A. Tachibana, Materials Science Forum 783–786, 2207–2212 (2014).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent170')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent170" class="bibtex">
+@article{Ichikawa_2014,
+  author    = {Ichikawa, Kazuhide and Nozaki, Hiroo and Tachibana, Akitomo},
+  doi       = {10.4028/www.scientific.net/msf.783-786.2207},
+  issn      = {1662-9752},
+  journal   = {Materials Science Forum},
+  month     = {May},
+  pages     = {2207–2212},
+  publisher = {Trans Tech Publications, Ltd.},
+  title     = {Use of Electronic Stress Tensor Density and Energy Density in Chemistry},
+  url       = {http://dx.doi.org/10.4028/www.scientific.net/MSF.783-786.2207},
+  volume    = {783–786},
+  year      = {2014}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.24726">
+                     Study of simulation method of time evolution of atomic and molecular systems by quantum electrodynamics</a></strong>,<br>
+                     K. Ichikawa, M. Fukuda, A. Tachibana, International Journal of Quantum Chemistry 114, 1567–1580 (2014).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent174')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent174" class="bibtex">
+@article{Ichikawa_2014,
+  author    = {Ichikawa, Kazuhide and Fukuda, Masahiro and Tachibana, Akitomo},
+  doi       = {10.1002/qua.24726},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {June},
+  number    = {23},
+  pages     = {1567–1580},
+  publisher = {Wiley},
+  title     = {Study of simulation method of time evolution of atomic and molecular systems by quantum electrodynamics},
+  url       = {http://dx.doi.org/10.1002/qua.24726},
+  volume    = {114},
+  year      = {2014}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/jcc.23920">
+                     Electronic stress tensor analysis of molecules in gas phase of CVD process for gesbte alloy</a></strong>,<br>
+                     H. Nozaki, Y. Ikeda, K. Ichikawa, A. Tachibana, Journal of Computational Chemistry 36, 1240–1251 (2015).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent175')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent175" class="bibtex">
+@article{Nozaki_2015,
+  author    = {Nozaki, Hiroo and Ikeda, Yuji and Ichikawa, Kazuhide and Tachibana, Akitomo},
+  doi       = {10.1002/jcc.23920},
+  issn      = {1096-987X},
+  journal   = {Journal of Computational Chemistry},
+  month     = {April},
+  number    = {16},
+  pages     = {1240–1251},
+  publisher = {Wiley},
+  title     = {Electronic stress tensor analysis of molecules in gas phase of CVD process for gesbte alloy},
+  url       = {http://dx.doi.org/10.1002/jcc.23920},
+  volume    = {36},
+  year      = {2015}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s10910-015-0528-0">
+                     General relativistic symmetry of electron spin vorticity</a></strong>,<br>
+                     A. Tachibana, Journal of Mathematical Chemistry 53, 1943–1965 (2015).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent176')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent176" class="bibtex">
+@article{Tachibana_2015,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1007/s10910-015-0528-0},
+  issn      = {1572-8897},
+  journal   = {Journal of Mathematical Chemistry},
+  month     = {July},
+  number    = {9},
+  pages     = {1943–1965},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {General relativistic symmetry of electron spin vorticity},
+  url       = {http://dx.doi.org/10.1007/s10910-015-0528-0},
+  volume    = {53},
+  year      = {2015}
+}
+
+                </pre>
+                
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 1955 line below Eq. (3.44) for: Eqs. (3.22)-(2.1) read: Eq. (3.22) to Eq. (2.1)
+                        </li>
+                            Page 1955  Eq. (3.45)  for $\frac{4\pi}{c}$  read $-\frac{q}{c}\frac{1}{\sqrt{(2\pi \hbar)^3}}\frac{4\pi}{c}$
+                        </li>
+                        <li>
+                            Page 1955  Eq. (3.46)  for $\frac{q}{(2\pi \hbar)^3}$  read $\frac{4\pi\hbar^2}{|\vec{p}|^2}\frac{q}{(2\pi \hbar)^3}$
+                        </li>
+                        <li>
+                            Page 1956  Eq. (3.47)  for $\frac{4\pi}{c}$  read $-\frac{q}{c}\frac{1}{\sqrt{(2\pi \hbar)^3}}\frac{4\pi}{c}$
+                        </li>
+                        <li>
+                            Page 1956 Eq. (3.53) for $\displaystyle \sum_{\sigma=\pm 1}$ read $\displaystyle \sum_{\sigma=\pm \frac{1}{2}}$
+                        </li>
+
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.25073">
+                     Theoretical study of atoms by the electronic kinetic energy density and stress tensor density</a></strong>,<br>
+                     H. Nozaki, K. Ichikawa, A. Tachibana, International Journal of Quantum Chemistry 116, 504–514 (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent177')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent177" class="bibtex">
+@article{Nozaki_2016,
+  author    = {Nozaki, Hiroo and Ichikawa, Kazuhide and Tachibana, Akitomo},
+  doi       = {10.1002/qua.25073},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {January},
+  number    = {7},
+  pages     = {504–514},
+  publisher = {Wiley},
+  title     = {Theoretical study of atoms by the electronic kinetic energy density and stress tensor density},
+  url       = {http://dx.doi.org/10.1002/qua.25073},
+  volume    = {116},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s10910-015-0587-2">
+                     Time-dependent renormalization of alpha-oscillators for QED</a></strong>,<br>
+                     A. Tachibana, Journal of Mathematical Chemistry 54, 661–681 (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent178')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent178" class="bibtex">
+@article{Tachibana_2016,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1007/s10910-015-0587-2},
+  issn      = {1572-8897},
+  journal   = {Journal of Mathematical Chemistry},
+  month     = {January},
+  number    = {3},
+  pages     = {661–681},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {Time-dependent renormalization of alpha-oscillators for QED},
+  url       = {http://dx.doi.org/10.1007/s10910-015-0587-2},
+  volume    = {54},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 671 Eq. (2.44) for $\int d\tilde{\omega}'_1 \cdots d \tilde{\omega}'_M$
+                            read $\int d\omega'_1 \cdots d \omega'_M$
+                        </li>
+                        <li>
+                            Page 673 Eq. (3.8) for $\frac{1}{\sqrt{\hat{z}_b \left( \tilde{\omega} (t) \right)}}$
+                            read $\frac{1}{\sqrt{\hat{z}_{b( \tilde{\omega})} (t) }}$
+                        </li>
+                        <li>
+                            Page 676 Eq. (3.27) for $\frac{1}{\sqrt{\hat{z}_{f ( \tilde{\omega}_{1_{f^c}} )} (t_i)}}$
+                            read $\frac{1}{\sqrt{\hat{z}_{f^c ( \tilde{\omega}_{1_{f^c}} )} (t_i)}}$
+                        </li>
+                        <li>
+                            Page 676 Eq. (3.27) for $\frac{1}{\sqrt{\hat{z}_{f ( \tilde{\omega}_{N_{f^c}} )} (t_i)}}$
+                            read $\frac{1}{\sqrt{\hat{z}_{f^c ( \tilde{\omega}_{N_{f^c}} )} (t_i)}}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1103/PhysRevA.93.012518">
+                     Local spin dynamics with the electron electric dipole moment</a></strong>,<br>
+                     M. Fukuda, K. Soga, M. Senami, A. Tachibana, Physical Review A 93,  (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent179')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent179" class="bibtex">
+@article{Fukuda_2016,
+  author    = {Fukuda, Masahiro and Soga, Kota and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1103/physreva.93.012518},
+  issn      = {2469-9934},
+  journal   = {Physical Review A},
+  month     = {January},
+  number    = {1},
+  publisher = {American Physical Society (APS)},
+  title     = {Local spin dynamics with the electron electric dipole moment},
+  url       = {http://dx.doi.org/10.1103/PhysRevA.93.012518},
+  volume    = {93},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.7567/JJAP.55.08PE01">
+                     Tension density as counter force to the Lorentz force density</a></strong>,<br>
+                     H. Nozaki, M. Senami, K. Ichikawa, A. Tachibana, Japanese Journal of Applied Physics 55, 08PE01 (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent180')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent180" class="bibtex">
+@article{Nozaki_2016,
+  author    = {Nozaki, Hiroo and Senami, Masato and Ichikawa, Kazuhide and Tachibana, Akitomo},
+  doi       = {10.7567/jjap.55.08pe01},
+  issn      = {1347-4065},
+  journal   = {Japanese Journal of Applied Physics},
+  month     = {April},
+  number    = {8S2},
+  pages     = {08PE01},
+  publisher = {IOP Publishing},
+  title     = {Tension density as counter force to the Lorentz force density},
+  url       = {http://dx.doi.org/10.7567/JJAP.55.08PE01},
+  volume    = {55},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.25102">
+                     Local physical quantities for spin based on the relativistic quantum field theory in molecular systems</a></strong>,<br>
+                     M. Fukuda, K. Soga, M. Senami, A. Tachibana, International Journal of Quantum Chemistry 116, 920–931 (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent181')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent181" class="bibtex">
+@article{Fukuda_2016,
+  author    = {Fukuda, Masahiro and Soga, Kota and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1002/qua.25102},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {February},
+  number    = {12},
+  pages     = {920–931},
+  publisher = {Wiley},
+  title     = {Local physical quantities for spin based on the relativistic quantum field theory in molecular systems},
+  url       = {http://dx.doi.org/10.1002/qua.25102},
+  volume    = {116},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.4942087">
+                     Dynamical picture of spin Hall effect based on quantum spin vorticity theory</a></strong>,<br>
+                     M. Fukuda, K. Ichikawa, M. Senami, A. Tachibana, AIP Advances 6,  (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent182')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent182" class="bibtex">
+@article{Fukuda_2016,
+  author    = {Fukuda, Masahiro and Ichikawa, Kazuhide and Senami, Masato and Tachibana, Akitomo},
+  doi       = {10.1063/1.4942087},
+  issn      = {2158-3226},
+  journal   = {AIP Advances},
+  month     = {February},
+  number    = {2},
+  publisher = {AIP Publishing},
+  title     = {Dynamical picture of spin Hall effect based on quantum spin vorticity theory},
+  url       = {http://dx.doi.org/10.1063/1.4942087},
+  volume    = {6},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/j.commatsci.2016.01.008">
+                     Bonding in doped gallium nanoclusters: Insights from regional DFT</a></strong>,<br>
+                     D. Henry, K. Ichikawa, H. Nozaki, A. Tachibana, Computational Materials Science 115, 145–153 (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent183')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent183" class="bibtex">
+@article{Henry_2016,
+  author    = {Henry, David J. and Ichikawa, Kazuhide and Nozaki, Hiroo and Tachibana, Akitomo},
+  doi       = {10.1016/j.commatsci.2016.01.008},
+  issn      = {0927-0256},
+  journal   = {Computational Materials Science},
+  month     = {April},
+  pages     = {145–153},
+  publisher = {Elsevier BV},
+  title     = {Bonding in doped gallium nanoclusters: Insights from regional DFT},
+  url       = {http://dx.doi.org/10.1016/j.commatsci.2016.01.008},
+  volume    = {115},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/qua.25103">
+                     Computational method for the retarded potential in the real‐time simulation of quantum electrodynamics</a></strong>,<br>
+                     M. Fukuda, K. Naito, K. Ichikawa, A. Tachibana, International Journal of Quantum Chemistry 116, 932–938 (2016).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent184')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent184" class="bibtex">
+@article{Fukuda_2016,
+  author    = {Fukuda, Masahiro and Naito, Kento and Ichikawa, Kazuhide and Tachibana, Akitomo},
+  doi       = {10.1002/qua.25103},
+  issn      = {1097-461X},
+  journal   = {International Journal of Quantum Chemistry},
+  month     = {February},
+  number    = {12},
+  pages     = {932–938},
+  publisher = {Wiley},
+  title     = {Computational method for the retarded potential in the real‐time simulation of quantum electrodynamics},
+  url       = {http://dx.doi.org/10.1002/qua.25103},
+  volume    = {116},
+  year      = {2016}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/s00894-018-3795-4">
+                     Quantum simulation of nanosized materials: 100 years of mystery is solved</a></strong>,<br>
+                     A. Tachibana, Journal of Molecular Modeling 24,  (2018).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent186')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent186" class="bibtex">
+@article{Tachibana_2018,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1007/s00894-018-3795-4},
+  issn      = {0948-5023},
+  journal   = {Journal of Molecular Modeling},
+  month     = {August},
+  number    = {9},
+  publisher = {Springer Science and Business Media LLC},
+  title     = {Quantum simulation of nanosized materials: 100 years of mystery is solved},
+  url       = {http://dx.doi.org/10.1007/s00894-018-3795-4},
+  volume    = {24},
+  year      = {2018}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1002/jcc.25600">
+                     New aspects of quantum electrodynamics on electronic structure and dynamics</a></strong>,<br>
+                     A. Tachibana, Journal of Computational Chemistry 40, 316–327 (2018).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent187')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent187" class="bibtex">
+@article{Tachibana_2018,
+  author    = {Tachibana, Akitomo},
+  doi       = {10.1002/jcc.25600},
+  issn      = {1096-987X},
+  journal   = {Journal of Computational Chemistry},
+  month     = {October},
+  number    = {2},
+  pages     = {316–327},
+  publisher = {Wiley},
+  title     = {New aspects of quantum electrodynamics on electronic structure and dynamics},
+  url       = {http://dx.doi.org/10.1002/jcc.25600},
+  volume    = {40},
+  year      = {2018}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.5085360">
+                     Computational analysis method of local electrical conductive property in nano-size materials</a></strong>,<br>
+                     M. Senami, M. Nakanishi, A. Tachibana, AIP Advances 9,  (2019).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent188')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent188" class="bibtex">
+@article{Senami_2019,
+  author    = {Senami, Masato and Nakanishi, Makoto and Tachibana, Akitomo},
+  doi       = {10.1063/1.5085360},
+  issn      = {2158-3226},
+  journal   = {AIP Advances},
+  month     = {February},
+  number    = {2},
+  publisher = {AIP Publishing},
+  title     = {Computational analysis method of local electrical conductive property in nano-size materials},
+  url       = {http://dx.doi.org/10.1063/1.5085360},
+  volume    = {9},
+  year      = {2019}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+    </ol>
+
+
+    <br>
+    <!--------------------------------------------->
+    <h3><i class="fa-solid fa-book-open"></i> Proceedings</h3>
+    <!--------------------------------------------->
+
+    <ol>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1109/IWGI.2001.967568">
+                     First-principle theoretical study on reliability SiO$_2$ thin films under external electric field</a></strong>,<br>
+                     K. Doi, K. Nakamura, A. Tachibana, Extended Abstracts of International Workshop on Gate Insulator. IWGI 2001 (IEEE Cat. No.01EX537) , 148–151 (Unknown Year).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent103')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent103" class="bibtex">
+@inproceedings{Doi,
+  author     = {Doi, K. and Nakamura, K. and Tachibana, A.},
+  booktitle  = {Extended Abstracts of International Workshop on Gate Insulator. IWGI 2001 (IEEE Cat. No.01EX537)},
+  collection = {IWGI-01},
+  doi        = {10.1109/iwgi.2001.967568},
+  pages      = {148–151},
+  publisher  = {Japan Soc. Appl. Phys},
+  series     = {IWGI-01},
+  title      = {First-principle theoretical study on reliability SiO/sub 2/ thin films under external electric field},
+  url        = {http://dx.doi.org/10.1109/IWGI.2001.967568},
+  year      = {2001}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1109/IWGI.2001.967592">
+                     First-principle electronic properties of ZrO$_2$ and HfO$_2$ crystals under external electric field</a></strong>,<br>
+                     S. Egami, K. Nakamura, A. Tachibana, Extended Abstracts of International Workshop on Gate Insulator. IWGI 2001 (IEEE Cat. No.01EX537) , 234–237 (Unknown Year).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent104')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent104" class="bibtex">
+@inproceedings{Egami,
+  author     = {Egami, S. and Nakamura, K. and Tachibana, A.},
+  booktitle  = {Extended Abstracts of International Workshop on Gate Insulator. IWGI 2001 (IEEE Cat. No.01EX537)},
+  collection = {IWGI-01},
+  doi        = {10.1109/iwgi.2001.967592},
+  pages      = {234–237},
+  publisher  = {Japan Soc. Appl. Phys},
+  series     = {IWGI-01},
+  title      = {First-principle electronic properties of ZrO/sub 2/ and HfO/sub 2/ crystals under external electric field},
+  url        = {http://dx.doi.org/10.1109/IWGI.2001.967592},
+  year      = {2001}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.1469896">
+                     First-principle theoretical study on the dynamical electronic characteristics of electromigration in the bulk, surface and grain boundary</a></strong>,<br>
+                     A. Tachibana, AIP Conference Proceedings 612, 105–116 (2002).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent105')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent105" class="bibtex">
+@inproceedings{Tachibana_2002,
+  author    = {Tachibana, Akitomo},
+  booktitle = {AIP Conference Proceedings},
+  doi       = {10.1063/1.1469896},
+  issn      = {0094-243X},
+  pages     = {105–116},
+  publisher = {AIP},
+  title     = {First-principle theoretical study on the dynamical electronic characteristics of electromigration in the bulk, surface and grain boundary},
+  url       = {http://dx.doi.org/10.1063/1.1469896},
+  volume    = {612},
+  year      = {2002}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1109/IWNC.2006.4570993">
+                     Local-property analysis for modeling of gate insulator materials</a></strong>,<br>
+                     D. Kentaro, N. Koichi, T. Akitomo, 2006 International Workshop on Nano CMOS , 209–235 (2006).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent127')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent127" class="bibtex">
+@inproceedings{Kentaro_Doi_2006,
+  author    = {Kentaro Doi and Koichi Nakamura and Akitomo Tachibana},
+  booktitle = {2006 International Workshop on Nano CMOS},
+  doi       = {10.1109/iwnc.2006.4570993},
+  month     = {January},
+  pages     = {209–235},
+  publisher = {IEEE},
+  title     = {Local-property analysis for modeling of gate insulator materials},
+  url       = {http://dx.doi.org/10.1109/IWNC.2006.4570993},
+  year      = {2006}
+}
+
+                </pre>
+                
+            </details>
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            <p> Page 234  Fig. 14 caption the following caption continues: </p>
+                            <p> It is a 3x3 real not-necessarily-symmetric tensor and has (i) 3 real eigenvalues, or (ii) 1 real and 2 complex conjugate ones. For the former case (i), the red (blue) color indicates the region where the largest eigenvalue is positive (negative) with the principal axis in green along which the dilatational dielectric response occurs. For the latter case (ii), the purple color indicates the region where the rotational dielectric response is predicted, with the equi-rotation-angle curves. </p>
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.3108389">
+                     Regional DFT—Electronic Stress Tensor Study of Aluminum Nanostructures for Hydrogen Storage</a></strong>,<br>
+                     P. Szarek, K. Hirai, K. Ichikawa, D. Henry, I. Yarovsky, A. Tachibana, D. Wei, X. Wang, AIP Conference Proceedings , 299–305 (2009).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent137')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent137" class="bibtex">
+@inproceedings{Szarek_2009,
+  author    = {Szarek, Paweł and Hirai, Kosuke and Ichikawa, Kazuhide and Henry, David J. and Yarovsky, Irene and Tachibana, Akitomo and Wei, Dong-Qing and Wang, Xi-Jun},
+  booktitle = {AIP Conference Proceedings},
+  doi       = {10.1063/1.3108389},
+  pages     = {299–305},
+  publisher = {AIP},
+  title     = {Regional DFT—Electronic Stress Tensor Study of Aluminum Nanostructures for Hydrogen Storage},
+  url       = {http://dx.doi.org/10.1063/1.3108389},
+  year      = {2009}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1109/ICSICT.2010.5667357">
+                     Quantum chemical approaches to the electronic structures of nano-electronics materials</a></strong>,<br>
+                     M. Senami, A. Tachibana, 2010 10th IEEE International Conference on Solid-State and Integrated Circuit Technology , 1765–1768 (2010).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent147')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent147" class="bibtex">
+@inproceedings{Senami_2010,
+  author    = {Senami, Masato and Tachibana, Akitomo},
+  booktitle = {2010 10th IEEE International Conference on Solid-State and Integrated Circuit Technology},
+  doi       = {10.1109/icsict.2010.5667357},
+  month     = {November},
+  pages     = {1765–1768},
+  publisher = {IEEE},
+  title     = {Quantum chemical approaches to the electronic structures of nano-electronics materials},
+  url       = {http://dx.doi.org/10.1109/ICSICT.2010.5667357},
+  year      = {2010}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.7566/JPSCP.1.016014">
+                     Description of Photon Field in Dynamics Simulation of Bound States Based on Quantum Field Theory</a></strong>,<br>
+                     M. Senami, S. Takada, A. Tachibana, Proceedings of the 12th Asia Pacific Physics Conference (APPC12) ,  (2014).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent171')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent171" class="bibtex">
+@inproceedings{Senami_2014,
+  author    = {Senami, Masato and Takada, Soujiro and Tachibana, Akitomo},
+  booktitle = {Proceedings of the 12th Asia Pacific Physics Conference (APPC12)},
+  doi       = {10.7566/jpscp.1.016014},
+  month     = {March},
+  publisher = {Journal of the Physical Society of Japan},
+  title     = {Description of Photon Field in Dynamics Simulation of Bound States Based on Quantum Field Theory},
+  url       = {http://dx.doi.org/10.7566/JPSCP.1.016014},
+  year      = {2014}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.4897891">
+                     Torque for electron spin induced by electron permanent electric dipole moment</a></strong>,<br>
+                     M. Senami, M. Fukuda, Y. Ogiso, A. Tachibana, AIP Conference Proceedings 1618, 954–957 (2014).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent172')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent172" class="bibtex">
+@inproceedings{Senami_2014,
+  author    = {Senami, Masato and Fukuda, Masahiro and Ogiso, Yoji and Tachibana, Akitomo},
+  booktitle = {AIP Conference Proceedings},
+  doi       = {10.1063/1.4897891},
+  issn      = {0094-243X},
+  pages     = {954–957},
+  publisher = {AIP Publishing LLC},
+  title     = {Torque for electron spin induced by electron permanent electric dipole moment},
+  url       = {http://dx.doi.org/10.1063/1.4897891},
+  volume    = {1618},
+  year      = {2014}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1063/1.4897892">
+                     Local spin torque induced by electron electric dipole moment in the Ybf molecule</a></strong>,<br>
+                     M. Fukuda, M. Senami, Y. Ogiso, A. Tachibana, AIP Conference Proceedings 1618, 958–961 (2014).
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent173')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent173" class="bibtex">
+@inproceedings{Fukuda_2014,
+  author    = {Fukuda, Masahiro and Senami, Masato and Ogiso, Yoji and Tachibana, Akitomo},
+  booktitle = {AIP Conference Proceedings},
+  doi       = {10.1063/1.4897892},
+  issn      = {0094-243X},
+  pages     = {958–961},
+  publisher = {AIP Publishing LLC},
+  title     = {Local spin torque induced by electron electric dipole moment in the Ybf molecule},
+  url       = {http://dx.doi.org/10.1063/1.4897892},
+  volume    = {1618},
+  year      = {2014}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/978-3-319-74582-4_6">
+                     Difference of Chirality of the Electron Between Enantiomers of H$_2$X$_2$</a></strong>,<br>
+                     M. Senami, K. Inada, K. Soga, M. Fukuda, A. Tachibana, in Y. Wang, M. Thachuk, R. Krems, J. Maruani (eds) Concepts, Methods and Applications of Quantum Systems in Chemistry and Physics (Springer International Publishing, , 2018), 31, pp. 95–106.
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent185')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent185" class="bibtex">
+
+@InProceedings{10.1007/978-3-319-74582-4_6,
+    author="Senami, Masato
+    and Inada, Ken
+    and Soga, Kota
+    and Fukuda, Masahiro
+    and Tachibana, Akitomo",
+    editor="Wang, Yan A.
+    and Thachuk, Mark
+    and Krems, Roman
+    and Maruani, Jean",
+    title="Difference of Chirality of the Electron Between Enantiomers of H{\$}{\$}{\_}2{\$}{\$}X{\$}{\$}{\_}2{\$}{\$}",
+    booktitle="Concepts, Methods and Applications of Quantum Systems in Chemistry and Physics",
+    year="2018",
+    publisher="Springer International Publishing",
+    address="Cham",
+    pages="95--106",
+    isbn="978-3-319-74582-4"
+}                  
+
+                </pre>
+                
+            </details>
+        </li>
+    </ol>
+
+
+    <br>
+    <!--------------------------------------------->
+    <h3><i class="fa-solid fa-book"></i> Books</h3>
+    <!--------------------------------------------->
+
+    <ol>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1142/4910">
+                     Energy Density in Materials and Chemical Reaction Systems</a></strong>,<br>
+                     A. Tachibana, in Reviews in Modern Quantum Chemistry: A Celebration of the Contributions of Robert Parr, Edited by K. D. Sen (World Scientific, Singapore, 2002), Chap. 45, pp. 1327-1366.
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent108')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent108" class="bibtex">
+@inbook{Sen_2002,
+  author    = {Sen, K D},
+  title = {Energy Density in Materials and Chemical Reaction Systems},
+  booktitle = {Reviews of Modern Quantum Chemistry: A Celebration of the Contributions of Robert G Parr(In 2 Volumes)},
+  doi       = {10.1142/4910},
+  isbn      = {9789812775702},
+  month     = {December},
+  publisher = {WORLD SCIENTIFIC},
+  url       = {http://dx.doi.org/10.1142/4910},
+  year      = {2002}
+  chapter   = {45},
+  pages     = {1327-1366},
+}                      
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="">Field Energy Density in Chemical Reaction Systems</a></strong>,<br>
+                    A. Tachibana, in Fundamental Perspectives in Quantum Chemistry: A Tribute to the Memory of Per-Olov Lowdin, Eds. by Erkki Brandas and Eugene Kryachko (Kluwer Academic Publishers, Dordrecht, 2003), pp. 211-239.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent1')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent1" class="bibtex">
+@incollection{Tachibana2003,
+  author    = {Tachibana, Akitomo},
+  title     = {Field Energy Density in Chemical Reaction Systems},
+  booktitle = {Fundamental Perspectives in Quantum Chemistry: A Tribute to the Memory of Per-Olov Lowdin},
+  editor    = {Brandas, Erkki and Kryachko, Eugene},
+  publisher = {Kluwer Academic Publishers},
+  year      = {2003},
+  pages     = {211--239},
+  address   = {Dordrecht},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 215 Eq.(6) for $i\hbar\frac{\partial}{\partial s^i}$
+                            read $i\hbar \frac{\partial}{\partial r^i}$ 
+                        </li>
+                        <li>
+                            Page 215 Eq.(7) for $i\hbar \hat{D}_{ek} (\vec{r}) \hat{\bar{\psi}}(\vec{r}) \gamma^k$
+                            read $i\hbar \hat{D}^\dagger_{ek} (\vec{r}) \hat{\bar{\psi}}(\vec{r}) \gamma^k$
+                        </li>
+                        <li>
+                            Page 218 Eq.(36) for $\vec{A} (\vec{r})$
+                            read $\hat{\vec{A}} (\vec{r})$ 
+                        </li>
+                        <li>
+                            Page 225 Eq.(91), last line for $2\int d^3 \vec{1}$
+                            read $\int d^3 \vec{1}$
+                        </li>
+                        <li>
+                            Page 226 Eq.(93) , last line for $2\int d^3 \vec{1}$
+                            read $\int d^3 \vec{1}$
+                        </li>
+                        <li> 
+                            Page 229 Eq.(102)  for $\frac{Z^5 e^2}{\pi a^4} \frac{1}{x^4} \left(\frac{2}{x}-\frac{1}{2} \right) e^{-x}$
+                            read $\frac{Z^5 e^2}{\pi a^4} \left(\frac{2}{x}-\frac{1}{2} \right) e^{-x}$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/1-4020-5372-X_9">
+                     Theoretical Studies of the Transition States Along the Reaction Coordinates of [NIFE] Hydrogenase</a></strong>,<br>
+                     H. Nakano, S. PaweŁ, K. Doi, A. Tachibana, in Molecular Materials with Specific Interactions – Modeling and Design,
+                        Challenges and Advances in Computational Chemistry and Physics, Vol. 4, Series Editor J. Leszczynski, Ed. by W. Andrzey Sokalski
+                        (Springer, Dordrecht,  The Netherlands, 2007), Chapter 9, pp. 399-432. 
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent131')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent131" class="bibtex">
+@Inbook{Nakano2007,
+    author="Nakano, Hiroshi
+    and Pawe{\L}, Szarek
+    and Doi, Kentaro
+    and Tachibana, Akitomo",
+    editor="Sokalski, W. Andrzej",
+    title="Theoretical Studies of the Transition States Along the Reaction Coordinates of [NIFE] Hydrogenase",
+    bookTitle="Molecular Materials with Specific Interactions -- Modeling and Design",
+    year="2007",
+    publisher="Springer Netherlands",
+    address="Dordrecht",
+    volume    = {4}
+    chapter   = {9},
+    pages="399--432",
+    isbn="978-1-4020-5372-6",
+    doi="10.1007/1-4020-5372-X_9",
+    url="https://doi.org/10.1007/1-4020-5372-X_9"
+}
+                
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1007/978-3-319-01529-3_7">
+                     Spin Torque and Zeta Force in Allene-Type Molecules</a></strong>,<br>
+                     M. Fukuda, M. Senami, A. Tachibana, 
+                     In M. Hotokka, E. Brändas, J. Maruani, G. Delgado-Barrio (eds) Advances in Quantum Methods and Applications in Chemistry, Physics, and Biology. Progress in Theoretical Chemistry and Physics (Springer, 2013), 27, pp. 131-139.
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent166')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent166" class="bibtex">
+@inbook{Fukuda_2013,
+  author    = {Fukuda, Masahiro and Senami, Masato and Tachibana, Akitomo},
+  booktitle = {Advances in Quantum Methods and Applications in Chemistry, Physics, and Biology},
+  doi       = {10.1007/978-3-319-01529-3_7},
+  isbn      = {9783319015293},
+  issn      = {1567-7354},
+  chapter   = {27}
+  pages     = {131–139},
+  publisher = {Springer International Publishing},
+  title     = {Spin Torque and Zeta Force in Allene-Type Molecules},
+  url       = {http://dx.doi.org/10.1007/978-3-319-01529-3_7},
+  year      = {2013}
+}
+
+                </pre>
+                
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="https://www.taylorfrancis.com/chapters/mono/10.1201/b14048-20/electronic-stress-spin-vorticity-swapan-kumar-ghosh-pratim-kumar-chattaraj">Electronic Stress with Spin Vorticity</a></strong>,<br>
+                    A. Tachibana, In Concepts and Methods in Modern Theoretical Chemistry: Electronic Structure and Reactivity (Atoms, Molecules, and Clusters); Eds. by Swapan K. Ghosh and Pratim K. Chattaraj (Taylor & Francis, CRC Press, 2013), Chapter 12, pp.235-251.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent7')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent7" class="bibtex">
+@incollection{Tachibana2013,
+  author    = {Tachibana, Akitomo},
+  title     = {Electronic Stress with Spin Vorticity},
+  booktitle = {Concepts and Methods in Modern Theoretical Chemistry: Electronic Structure and Reactivity (Atoms, Molecules, and Clusters)},
+  editor    = {Ghosh, Swapan K. and Chattaraj, Pratim K.},
+  publisher = {Taylor & Francis / CRC Press},
+  year      = {2013},
+  chapter   = {12},
+  pages     = {235--251},
+}
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 236 Eq.(12.8) for $F^{\mu \nu}$ 
+                            read $F^{\nu \mu}$
+                        </li>
+                        <li>
+                            Page 236 Eq.(12.10) for $-R^{\mu}_{\ \ \nu}$ 
+                            read $+R^{\mu}_{\ \ \nu}$ 
+                        </li>
+                        <li> 
+                            Page 237 Eq.(12.12) for $-R^{0}_{\ \ \nu}$ 
+                            read $+R^{0}_{\ \ \nu}$
+                        </li>
+                        <li>
+                            Page 237 Eq.(12.13) for $-R^{k}_{\ \ \nu}$ 
+                            read $+R^{k}_{\ \ \nu}$
+                        </li>
+                        <li> 
+                            Page 237 Eq.(12.16) for $-R^{k}_{\ \ \nu}$ 
+                            read $+R^{k}_{\ \ \nu}$
+                        </li>
+                        <li> 
+                            Page 237 Eq.(12.20) for $\varepsilon^{\Pi}_{\mu \nu}$
+                            read $-\varepsilon^{\Pi}_{\mu \nu}$
+                        </li>
+                        <li>
+                            <p> Page 239 Eq.(12.35) the following sentence continues: </p>
+                            <p> The l.h.s. of Equations 12.33 and 12.35 are unique up to irrotational vector fields. </p>
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+
+        <li>
+            <p><strong><a href="https://link.springer.com/book/10.1007/978-981-10-3132-8">
+                    New Aspects of Quantum Electrodynamics</a></strong>,<br>
+                    A. Tachibana, Springer Nature Ltd. (2017).
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent11')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent11" class="bibtex">
+@book{Tachibana2017,
+  author    = {Akitomo Tachibana},
+  title     = {New Aspects of Quantum Electrodynamics},
+  publisher = {Springer Singapore},
+  year      = {2017},
+  doi       = {10.1007/978-981-10-3132-8},
+  isbn      = {978-981-10-3132-8},
+}                    
+                </pre>
+            </details>
+
+            <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            Page 146  Eq. (4.13)  for $_H\langle\Psi|^H$  read $_H \langle\Psi|$
+                        </li>
+                        <li>
+                            Page 146  Eq. (4.13)  for $|\Psi \rangle^HH$  read $|\Psi \rangle_H$
+                        </li>
+                        <li>
+                            Page 154  Eq. (4.58)  for $\frac{4\pi}{c}$  read $-\frac{q}{c}\frac{1}{\sqrt{(2\pi \hbar)^3}}\frac{4\pi}{c}$
+                        </li>
+                        <li>
+                            Page 154  Eq. (4.59)  for $\frac{q}{(2\pi \hbar)^3}$  read $\frac{4\pi\hbar^2}{|\vec{p}|^2}\frac{q}{(2\pi \hbar)^3}$
+                        </li>
+                        <li>
+                            Page 155  Eq. (4.60)  for $\frac{4\pi}{c}$  read $-\frac{q}{c}\frac{1}{\sqrt{(2\pi \hbar)^3}}\frac{4\pi}{c}$
+                        </li>
+                        <li>
+                            Page 162  Eq. (4.98)  for $\rangle^HH$  read $\rangle_H$
+                        </li>
+                        <li>
+                            Page 146  Eq. (4.98)  for $\rangle^SS$  read $\rangle_S$
+                        </li>
+                    </ol>
+            </details>
+        </li>
+
+        <li>
+            <p><strong><a href="https://www.saiensu.co.jp/search/?isbn=4910054700473&y=2017">新講 電磁量子力学</a></strong>,<br>
+                    立花明知, SGCライブラリ, (株)サイエンス社, 2017年4月.
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent12')">
+                    <i class="fas fa-copy"></i> <!-- コピーアイコン -->
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent12" class="bibtex">
+@book{Tachibana2017jp,
+  author    = {立花明知},
+  title     = {新講 量子電磁力学},
+  publisher = {SGCライブラリ, (株)サイエンス社},
+  year      = {2017},
+  month     = {4},
+  isbn      = {4910054700473},
+  pages     = {184},                    
+}
+                </pre>
+            </details>
+
+            <!---
+            <details class="errata">
+                <summary><a href="./errata/Errata_Shinkou_QED.pdf" target="_blank">ERRATA</a></summary>   
+            </details>
+            --->
+             <details class="errata">
+                <summary><strong>ERRATA</strong></summary>   
+                    <ol>
+                        <li>
+                            p.12  Eq.(2.6) （誤） $\frac{\hbar c}{2q_e}$    
+                            （正） $\frac{\hbar}{2q_e}$
+                        </li>
+                        <li>
+                            p.12  Eq.(2.6) （誤） $\frac{\hbar c^2}{2}$    
+                            （正） $\frac{\hbar c}{2}$
+                        </li>
+                        <li>
+                            p.23  Eq.(3.14) （誤） $(\frac{\hbar ^2}{2m_a})$    
+                            （正） $(\frac{\hbar ^2}{2m_a})^2$
+                        </li>
+                        <li>
+                            p.24  図3.2 （誤） $\sum\limits_{a} \hat{\vec{\ell}}_e (x)$    
+                            （正） $\sum\limits_{a} \hat{\vec{\ell}}_a (x)$
+                        </li>
+                        <li>
+                            p.26  Eq.(3.23) （誤） $\hat{A}^\mu(x)$    
+                            （正） $\hat{A}_{\textrm{radiation}}^\mu(x)$
+                        </li>
+                        <li>
+                            p.29  図3.7 （誤） $\textrm{Equation fo motion}$    
+                            （正） $\textrm{Equation of motion}$
+                        </li>
+                        <li>
+                            p.35  Eq.(4.6) （誤） $\frac{1}{2}g_{\mu \nu}(x)$    
+                            （正） $\frac{1}{2}g_{\mu \nu}(x)R(x)$
+                        </li>
+                        <li>
+                            p.38  Eq.(4.34) （誤） $\frac{1}{\sqrt{-g}}\epsilon^{\mu \nu \rho \sigma}$    
+                            （正） $\frac{1}{\sqrt{-g}}\delta^{\mu \nu \rho \sigma}$
+                        </li>
+                        <li>
+                            p.38  Eq.(4.34) （誤） $\epsilon^{0123}$    
+                            （正） $\delta^{0123}$
+                        </li>
+                        <li>
+                            p.38  Eq.(4.35) （誤） $\frac{1}{\sqrt{-g}}\epsilon_{\mu \nu \rho \sigma}$    
+                            （正） $\frac{1}{\sqrt{-g}}\delta_{\mu \nu \rho \sigma}$
+                        </li>
+                        <li>
+                            p.38  Eq.(4.35) （誤） $\epsilon_{0123}$    
+                            （正） $\delta_{0123}$
+                        </li>
+                        <li>
+                            p.42  図4.10 （誤） $T^{\mu 0}{}_{; \mu} = 0$     
+                            （正） $T^{\mu k}{}_{; \mu} = 0$
+                        </li>
+                        <li>
+                            p.56  Eq.(5.57)の１行下 （誤） $(1.16)$    
+                            （正） $(1.19)$
+                        </li>
+                        <li>
+                            p.57  Eq.(5.58) （誤） $\frac{4\pi}{c}$    
+                            （正） $-\frac{q}{c}\frac{1}{\sqrt{(2\pi \hbar)^3}}\frac{4\pi}{c}$
+                        </li>
+                        <li>
+                            p.57  Eq.(5.59) （誤） $\frac{q}{(2\pi \hbar)^3}$    
+                            （正） $\frac{4\pi\hbar^2}{|\vec{p}|^2}\frac{q}{(2\pi \hbar)^3}$
+                        </li>
+                        <li>
+                            p.57  Eq.(5.60) （誤） $\frac{4\pi}{c}$    
+                            （正） $-\frac{q}{c}\frac{1}{\sqrt{(2\pi \hbar)^3}}\frac{4\pi}{c}$
+                        </li>
+                        <li>
+                            p.59  Eq.(5.69)の３行下 （誤） $(5.60)-(5.62)$    
+                            （正） $(5.58)-(5.60)$
+                        </li>
+                        <li>
+                            p.72  Eq.(7.1)の１行下 （誤） $(4.69)$    
+                            （正） $(5.69)$
+                        </li>
+                        <li>
+                            p.73  Eq.(7.9)の１行下 （誤） $(4.69)$    
+                            （正） $(5.69)$
+                        </li>
+                        <li>
+                            p.86  Eq.(7.69) （誤） $d\tilde{\omega}'_{N_{\tilde{\omega}'}}(t_i)$     （正）$d\tilde{\omega}'_{M_{\tilde{\omega}'}}(t_i)$
+                        </li>
+                        <li>
+                            p.86  Eq.(7.69) （誤） $d\omega'_{N_{\omega'}}$    （正）$d\omega'_{M_{\omega'}}$
+                        </li>
+                        <li>
+                            p.119  Eq.(D.91) （誤） $L^{k0} = i\hbar p^0\frac{\partial}{\partial p^k}$     （正）$L^{k0} = -i\hbar p^0\frac{\partial}{\partial p^k}$
+                        </li>
+                        <li>
+                            p.122  Eq.(D.150) （誤） $d\psi$     （正）$\psi$
+                        </li>
+                        <li>
+                            p.123  Eq.(D.161) （誤） $\slashed{\gamma}$     （正）$\slashed \partial$
+                        </li>
+                        <li>
+                            p.139  Eq.(D.387) （誤） $\partial$     （正）$\slashed \partial$
+                        </li>
+                        <li>
+                            p.139  Eq.(D.391) （誤） $\delta(q)$     （正）$\delta^4 (q)$
+                        </li>
+                        <li>
+                            p.151  Eq.(D.561) （誤） $\frac{1}{2}$     （正）$\frac{1}{4\pi}$
+                        </li>
+                        <li>
+                            p.158  Eq.(D.641) （誤） $\lambda^A{}_B$     （正）$\lambda_\xi{}^A{}_B$
+                        </li>
+                        <li>
+                            p.162  Eq.(D.718)の１行下 （誤） $\textbf{実カイラル超場}$     （正）$\textbf{実カイラルスカラー超場}$
+                        </li>
+
+                    </ol>
+            </details>
+        </li>
+
+
+        <li>
+            <p><strong><a href="http://dx.doi.org/10.1016/B978-0-12-813892-2.00004-5">
+                     Contemporary analysis of the influence of adsorbents on the structure, stability, and reactivity of main group nanoparticles using regional density functional theory</a></strong>,<br>
+                     P. Szarek, A. Tachibana, in Harnessing Nanoscale Surface Interactions (Elsevier, , 2019), Chapter.4, pp. 97–127.
+            </p>
+                    
+            <details>
+                <summary><strong>bibtex</strong>
+                <button class="copy-btn" onclick="copyToClipboard('bibtexContent189')">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <div id="copyMessage" class="message">bibtex copied to clipboard!</div>
+                </summary>
+                <pre id="bibtexContent189" class="bibtex">
+@incollection{SZAREK201997,
+    title = {Chapter 4 - Contemporary analysis of the influence of adsorbents on the structure, stability, and reactivity of main group nanoparticles using regional density functional theory},
+    editor = {David J. Henry},
+    booktitle = {Harnessing Nanoscale Surface Interactions},
+    publisher = {Elsevier},
+    pages = {97-127},
+    year = {2019},
+    series = {Micro and Nano Technologies},
+    isbn = {978-0-12-813892-2},
+    doi = {https://doi.org/10.1016/B978-0-12-813892-2.00004-5},
+    url = {https://www.sciencedirect.com/science/article/pii/B9780128138922000045},
+    author    = {Szarek, Paweł and Tachibana, Akitomo},
+    keywords = {Bond order, Electronic stress tensor, Energy density, Force constant, Local response functions},
+}                     
+
+                </pre>
+                
+            </details>
+        </li>
+
+
+    </ol>
+
+
+    <script>
+        document.getElementById("show-errata").addEventListener("click", function() {
+            // すべての <details> タグを取得
+            let allDetails = document.querySelectorAll("details");
+
+            // 現在のボタンテキストを確認して切り替え
+            let button0 = document.getElementById("toggle-details");
+            if (button0.innerHTML === "Show details") {
+                // すべての <details> タグを表示
+                allDetails.forEach(details => {
+                    details.style.display = "block";
+                });
+                button0.innerHTML = "Show only Refs";  // ボタンテキストを変更
+            } 
+
+            // クラスが "errata" の <details> タグだけを取得
+            document.querySelectorAll("details.errata").forEach(details => {
+                // open属性があれば削除（折りたたむ）、なければ追加（展開する）
+                if (details.hasAttribute("open")) {
+                    details.removeAttribute("open");  // 折りたたむ
+                } else {
+                    details.setAttribute("open", "");  // 展開する
+                }
+            });
+
+            // 現在のボタンテキストを確認して切り替え
+            let button = document.getElementById("show-errata");
+            if (button.innerHTML === "Show all ERRATA") {
+                button.innerHTML = "Hide all ERRATA";  // ボタンテキストを変更
+            } else {
+                button.innerHTML = "Show all ERRATA";  // ボタンテキストを変更
+            }
+
+        });
+    </script>
+
+    <style>
+    /* ボタンを右上に固定 */
+    #show-errata {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #show-errata:hover {
+        background-color: #45a049;
+    }
+    </style>
+
+    <script>
+        document.getElementById("toggle-details").addEventListener("click", function() {
+            // すべての <details> タグを取得
+            let allDetails = document.querySelectorAll("details");
+
+            // 現在のボタンテキストを確認して切り替え
+            let button = document.getElementById("toggle-details");
+            if (button.innerHTML === "Show details") {
+                // すべての <details> タグを表示
+                allDetails.forEach(details => {
+                    details.style.display = "block";
+                });
+                button.innerHTML = "Show only Refs";  // ボタンテキストを変更
+            } else {
+                // すべての <details> タグを非表示
+                allDetails.forEach(details => {
+                    details.style.display = "none";
+                });
+                button.innerHTML = "Show details";  // ボタンテキストを変更
+            }
+        });
+    </script>
+
+    
+    <style>
+        /* ボタンを右上に固定 */
+        #toggle-details {
+            position: fixed;
+            top: 10px;
+            right: 180px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #749cd3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        #toggle-details:hover {
+            background-color: #749cd3;
+        }
+    </style>
+
+
+</body>
+</html>
+
