@@ -2,7 +2,7 @@
 <HTML>
 
 <HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder Version 7.0.0.0 for Windows">
 <META http-equiv="Content-Style-Type" content="text/css">
 <TITLE>立花研究室</TITLE>
@@ -18,6 +18,7 @@
   </FONT>
   <B>⇒ <FONT color="#ff0000" size="-1"><A href="top_e.htm">English</A></B> </FONT>
 
+<!---
   <TABLE width="946">
     <TBODY>
       <TR>
@@ -26,8 +27,76 @@
       </TR>
     </TBODY>
   </TABLE>
+-->
+
+  <div class="slider-container">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="image-wrapper">
+                    <img src="https://mfukudaqed.github.io/Tachibana_Lab_HP/slide3.JPG" alt="画像2">
+                    <img src="https://mfukudaqed.github.io/Tachibana_Lab_HP/slide2.JPG" alt="画像4">
+                    <img src="https://mfukudaqed.github.io/Tachibana_Lab_HP/slide1.JPG" alt="画像2">
+          </div>
+        </div>
+        <!--
+        <div class="swiper-slide">
+                    <img src="qedynamics.png" alt="画像4">
+        </div>
+        -->
+        <div class="swiper-slide">
+                    <img src="pic/alpha_oscillator_jp.jpg" alt="画像1"> 
+            <div class="slide-caption">              
+                (left) 
+                <a href="https://www.quantum-int.org/2018/files/Frontier_Lecture_2018_Tachibana.pdf" target="_blank">
+                    A. Tachibana, "Quantum Mechanics: 100 Years of Mystery Solved!"</a> <br>
+                (right) 
+                <a href="https://doi.org/10.1088/1402-4896/accf4d" target="_blank">
+                    A. Tachibana, "Geodesic angular momentum," 2023 Phys. Scr. 98 065010 </a>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- 
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    -->
+
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true,
+      },
+      centeredSlides: true, 
+      slidesPerView: 1,
+      spaceBetween: 10,
+      effect: "slide",
+      speed: 800,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+  </script>
+
+
+
 </div>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <style>
 div.index1{
@@ -39,6 +108,91 @@ div.main{
         float: left;
         width: 76%;
 }
+
+.image-wrapper {
+  gap: 10px;       
+}
+
+.image-wrapper img {
+  height: 100%;
+  width: auto; /* 各画像を3分の1に */
+  max-width: 32%
+}
+
+    .slider-container {
+      /* width: 770px;*/
+      height: 33.33vh;
+      width: 90%; 
+      max-width: 90vw;
+      max-height: 33.33vh;
+      /* height: 40vh; */
+      margin: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      padding-bottom: 20px;
+    }
+    .swiper {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .swiper-slide img {
+      height: 80%;
+      width: auto;
+      object-fit: contain;  /* 画像が中央に収まるように設定 */
+      transition: opacity 0.3s;
+    }
+    .swiper-slide:not(.swiper-slide-active) img {
+      opacity: 0.5;
+    }
+    .slide-caption {
+         text-align: center;
+         font-size: 12px;
+         margin-top: 10px;
+         color: #333;
+    }   
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 50%;  /* 親要素（swiper-container）の高さの真ん中 */
+        transform: translateY(-50%);  /* ボタンを真ん中に配置 */
+    }
+    /* ナビゲーションボタンの位置を左右に配置 */
+    .swiper-button-next {
+      right: 0px;  /* 右側に少し寄せる */
+    }
+
+    .swiper-button-prev {
+      left: 0px;  /* 左側に少し寄せる */
+    }  
+
+    .swiper-pagination {
+        text-align: center;
+        margin-top: 10px; /* 画像との間隔を調整 */
+        bottom: -20px;
+    }
+    .swiper-pagination-bullet {
+        width: 15px;  /* 幅 */
+        height: 15px; /* 高さ */
+    }
+    .swiper-wrapper {
+        display: flex;
+    }
+
+
 </style>
 
 
@@ -67,15 +221,18 @@ div.main{
     </style>
     <B><立花教授の理論></B>
     <ul>
-      <li><A href="IRC_theory.htm">Meta-IRC理論</A></li>
-      <li><A href="holonomy_theory.htm">分子振動ホロノミー理論</A></li>
-      <li><A href="superconductivity_theory.htm">分子超伝導理論</A></li>
-      <li><A href="nonequilibrium_theory.htm">量子非平衡熱力学理論</A></li>
-      <li><A href="regionalDFT.htm">領域密度汎関数理論</A></li>
-      <li><A href="quantum_energy_density.htm">量子エネルギー密度</A></li>
-      <li><A href="Rigged_QED_theory.htm">Rigged QED (Quantum Electrodynamics) 理論</A></li>
-      <li><A href="quantum_spin_vorticity_theory.htm">量子スピン渦理論</A></li>
-      <li><A href="alpha_oscillator.htm">アルファ振動子理論</A></li>
+      <li><A href="theory.html#theory1">Meta-IRC理論</A></li>
+      <li><A href="theory.html#theory2">分子振動ホロノミー理論</A></li>
+      <li><A href="theory.html#theory3">分子超伝導理論</A></li>
+      <li><A href="theory.html#theory4">量子非平衡熱力学理論</A></li>
+      <li><A href="theory.html#theory5">領域密度汎関数理論</A></li>
+      <li><A href="theory.html#theory6">量子エネルギー密度</A></li>
+      <li><A href="theory.html#theory7">Rigged QED (Quantum Electrodynamics) 理論</A></li>
+      <li><A href="theory.html#theory8">量子スピン渦理論</A></li>
+      <li><A href="theory.html#theory9">アルファ振動子理論</A></li>
+      <li><A href="theory.html#theory10">測地的角運動量理論</A></li>
+      <li><A href="theory.html#theory11">ダークエネルギー理論</A></li>
+                    
     </ul>
   </FONT>
 </div>
@@ -110,26 +267,26 @@ div.main{
     </style>
 
       <div class="book_cover_1">
-        <a href="http://www.saiensu.co.jp/index.php?page=book_details&ISBN=4910054700473&YEAR=2017">
+        <a href="http://www.saiensu.co.jp/index.php?page=book_details&ISBN=4910054700473&YEAR=2017" target="_blank">
         <IMG src="./fig/book_cover_1.jpg" width="157" height="225" class="book"></a>
         <br>
-        <a href="http://www.saiensu.co.jp/index.php?page=book_details&ISBN=4910054700473&YEAR=2017">
+        <a href="http://www.saiensu.co.jp/index.php?page=book_details&ISBN=4910054700473&YEAR=2017" target="_blank">
         立花明知，「新講　量子電磁力学」，SGCライブラリ，㈱サイエンス社， 2017年4月</a>
       </div>
       
       <div class="book_cover_2">
-        <a href="http://www.springer.com/jp/book/9789811031311">
+        <a href="http://www.springer.com/jp/book/9789811031311" target="_blank">
         <IMG src="./fig/book_cover_2.jpg" width="157" height="225" class="book"></a>
         <br>
-        <a href="http://www.springer.com/jp/book/9789811031311">
+        <a href="http://www.springer.com/jp/book/9789811031311" target="_blank">
         A. Tachibana, "New Aspects of Quantum Electrodynamics", Springer (2017)</a>
       </div>
       
       <div class="book_cover_3">
-        <a href="https://www.kagakudojin.co.jp/book/?book_no=253403">
+        <a href="https://www.kagakudojin.co.jp/book/?book_no=253403" target="_blank">
         <IMG src="./fig/book_cover_3.jpg" width="157" height="225" class="book"></a>
         <br>
-        <a href="https://www.kagakudojin.co.jp/book/?book_no=253403">
+        <a href="https://www.kagakudojin.co.jp/book/?book_no=253403" target="_blank">
         インタビュー記事：ついに解けた！量子力学100年のミステリー，化学，12月号，pp. 50-57 (2016)</a>
       </div>
   
@@ -165,7 +322,10 @@ div.main{
       <p> <b> <立花研で開発されたQEDに基づく量子状態の時間発展プログラムコード></b> </p>
     </FONT>
     <FONT size="+2">
-      <a href="./qed/index.html">QEDynamics</a>
+      <a href="./qed/index.html" target="_blank">QEDynamics</a>
+    </FONT>
+    <FONT size="+2">
+        <p> <a href="https://mfukudaqed.github.io/Tachibana_Lab_HP/qed/References.html" target="_blank">Reference list</a> </p>
     </FONT>
   <!--
           <P><BR> <B>研究室旅行（<A href="2008Ohara.htm">2008Ohara</A>,<A href="2009Ise.htm">2009Ise</A>,<A href="2010Yoshino/index.html">2010Yoshino</A>,<A href="2011Otsu/index.html">2011Otsu</A>,<A href="2012Hikone/index.html">2012Hikone</A>,<A href="2013Nara/index.html">2013Nara</A>,<A href="./2014Fukui/index.html">2014Fukui</A>,<A href="./2015Kobe/index.html">2015Kobe</A>,<A href="./2016Kaga/page1.html">2016Kaga</A>）</B></P> -->
