@@ -28,6 +28,9 @@
             flex-direction: column;
             justify-content: start;
         }
+   
+
+
         .home-link {
             color: white; /* 白文字にする */
             font-size: 20px;
@@ -62,6 +65,7 @@
         .sidebar ul li a:hover {
             color: #1abc9c;
         }
+
 
         /* メインコンテンツ */
         .content {
@@ -107,6 +111,16 @@
             background: #ddd;
             margin: 30px 0;
         }
+
+        /* スマホ向けのスタイル */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none; /* スマホでは目次を非表示にする */
+            }
+            .content {
+                margin-left: 0; /* 余白をなくして全幅表示 */
+            }
+        }    
     </style>
 
     <!-- For MathJax --> 
@@ -130,6 +144,7 @@
 </head>
 <body>
 
+    <button class="menu-toggle" aria-label="メニューを開閉">☰</button>
     <!-- サイドバー（目次） -->
     <div class="sidebar">
         <a href="https://mfukudaqed.github.io/Tachibana_Lab_HP" class="home-link">Home</a>
@@ -395,21 +410,8 @@
 
         <div class="space"></div> 
 
-                <!--
-            <li><a href="#theory2"></a></li>
-            <li><a href="#theory3"></a></li>
-            <li><a href="#theory4">量子非平衡熱力学理論</a></li>
-            <li><a href="#theory5">領域密度汎関数理論</a></li>
-            <li><a href="#theory6">量子エネルギー密度</a></li>
-            <li><a href="#theory7">Rigged QED (Quantum Electrodynamics) 理論</a></li>
-            <li><a href="#theory8">量子スピン渦理論</a></li>
-            <li><a href="#theory9">アルファ振動子理論</a></li>
-            <li><a href="#theory10">測地的角運動量理論</a></li>
-            <li><a href="#theory11">ダークエネルギー理論</a></li>
--->
-
-
     </div>
+
 
 </body>
 </html>
