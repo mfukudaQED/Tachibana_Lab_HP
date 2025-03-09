@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory</title>
+    <style>
+        /* 全体のスタイル */
+        body {
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Times New Roman", serif;
+            margin: 0;
+            display: flex;
+            background-color: #f8f9fa;
+        }
+
+        /* サイドメニュー（目次） */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+   
+
+
+        .home-link {
+            color: white; /* 白文字にする */
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px; /* 下に少し余白を追加 */
+            transition: color 0.3s ease;
+        }
+
+        .sidebar h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #1abc9c;
+        }
+
+
+        /* メインコンテンツ */
+        .content {
+            margin-left: 270px;
+            padding: 40px;
+            max-width: 1200px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        .papers {
+            margin-left: 40px;
+            line-height: 1.8;
+        }
+        .space {
+            height: 80vh; /* 空行スペースをページの高さ分作る */
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #34495e;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: #ddd;
+            margin: 30px 0;
+        }
+
+        /* スマホ向けのスタイル */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none; /* スマホでは目次を非表示にする */
+            }
+            .content {
+                margin-left: 0; /* 余白をなくして全幅表示 */
+            }
+        }    
+    </style>
+
+    <!-- For MathJax --> 
+    <script type="text/javascript" async
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>  
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            macros: {
+              slashed: ['{#1\\!\\!\\!/}', 1]  // `\slashed{}` を定義
+            }
+          }
+        };
+    </script>
+</head>
+<body>
+
+    <!-- サイドバー（目次） -->
+    <div class="sidebar">
+        <a href="https://mfukudaqed.github.io/Tachibana_Lab_HP" class="home-link">Home</a>
+        <ul>
+            <li><a href="#theory1">Meta-IRC Theory</a></li>
+            <li><a href="#theory2">Quanum Holonomy of Molecular Vibration</a></li>
+            <li><a href="#theory3">Superconductivity</a></li>
+            <li><a href="#theory4">Quantum Irreversible Thermodynamics</a></li>
+            <li><a href="#theory5">Regional DFT</a></li>
+            <li><a href="#theory6">Quantum Energy Density</a></li>
+            <li><a href="#theory7">Rigged QED (Quantum Electrodynamics) Theory</a></li>
+            <li><a href="#theory8">Quantum Electron Spin Vorticity Principle</a></li>
+            <li><a href="#theory9">Alpha-Oscillator Theory</a></li>
+            <li><a href="#theory10">Geodesic Angular Momentum Theory</a></li>
+            <li><a href="#theory11">Dark Energy Theory</a></li>
+        </ul>
+    </div>
+        
+
+
+
+    <!-- メインコンテンツ -->
+    <div class="content">
+        <h1>Theoretical Works of Prof. TACHIBANA</h1>
+
+
+        <!-- セクション1 -->
+        <h2 id="theory1">Meta-IRC Theory</h2>
+            <p> Meta-IRC (Intrinsic Reaction Coordinate) theory has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                        "Differential Geometry of Chemically Reacting Systems,"
+                        A. Tachibana and K. Fukui, Theor. Chim. Acta (Berl.) 49. 321-347 (1978).
+                </li>
+                <li>
+                    "Intrinsic Dynamism in Chemically Reacting Systems,"
+                    A. Tachibana and K. Fukui, Theor. Chim. Acta (Berl.), 51, 189-206 (1979).
+                </li>
+                <li>
+                    "Intrinsic Field Theory of Chemical Reactions,"
+                    A. Tachibana and K. Fukui, Theor. Chim. Acta (Berl.), 51, 275-296 (1979).
+                </li>
+                <li>
+                    "Novel Variational Priniciple of Chemical Reactions,"
+                    A. Tachibana and K. Fukui, Theor. Chim. Acta (Berl.), 57, 81-94 (1980).
+                </li>
+                <li>
+                    "Extended Hessian Matrix along the Reaction Coordinate,"
+                    A. Tachibana, Theor. Chim. Acta (Berl.), 58, 301-308 (1981).
+                </li>
+                <li>
+                    "String Model of Chemical Reaction Coordinate,"
+                    A. Tachibana, J. Math. Chem., 7, 95-110 (1991).
+                </li>
+                <li>
+                    "String Model of Chemical Reactions,"
+                    A. Tachibana, in "Conceptual Trends in Quantum Chemistry," Eds. by E. S. Kryachko and J. L. Calais (Kluwer, Dordrecht, 1994), pp. 101-118.
+                </li>
+            </div>
+        <hr>
+
+        <h2 id="theory2">Quanum Holonomy of Molecular Vibration</h2>
+            <p> Quantum mechanical holonomy of molecular vibration has firstly been formulalted.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                    "Complete Molecular Hamiltonian Based on the Born-Oppenheimer Adiabatic Approximation," A. Tachibana and T. Iwai, Phys. Rev. A, 33, 2262-2269 (1986).
+                </li>
+                <li>
+                    "Reaction Holonomy and the Geometric Phase of Quantum Evolution in Chemical Reaction Systems," A. Tachibana, J. Mol. Structure (Theochem), 310, 1-11 (1994).
+                </li>
+                <li>
+                    "Role and Treatment of Zero Eigenvalues of Rotation in the Cartesian Force Constant Matrix along Reaction Path," A. Tachibana and T. Iwai, in "The Reaction Path in Chemistry: Current Approaches and Perspectives," Ed. by D. Heidrich (Kluwer, Dordrecht, 1995), pp. 77-94.
+                </li>
+                <li>
+                    "A Simple Algorithm for Conservation of Invariants of Motion in Reaction Dynamics Calculations: Application to the NH$_3^+$ + NH$_3$ System,"  A. Tachibana and M. Fuju, J. Chem. Phys., 110, 2323-2331 (1999).
+                </li>
+                <li>
+                    "Differential Geometry in Chemical Reaction Dynamics," A. Tachibana, in "The Transition State - A Theoretical Approach," Ed. by T. Fueno (Kodansha, Tokyo; Gordon and Breach, Amsterdam, 1999), pp. 217-247.
+                </li>
+                <li>
+                    "The Geometry and Mechanics of Multiparticle Systems," T. Iwai and A. Tachibana, Ann. Inst. Henri Poincare, 70, 525-559 (1999).
+                </li>
+            </div>
+        <hr>
+
+
+        <h2 id="theory3">Superconductivity</h2>
+            <p> Non-perturbational non-adiabatic vibronic theory of superconducting phase transition has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                    "Complete Vibronic Hamiltonian and 'Hidden' Superconductivity," A. Tachibana, Phys. Rev. A, 35, 18-25 (1987).
+                </li>
+                <li>
+                    "Hidden Superconductivity," A. Tachibana, Synth. Met., 19, 105-110 (1987).
+                </li>
+                <li>
+                    "Density Functional Theory for Hidden High-Tc Superconductivity," A. Tachibana, in High-Temperature Superconducting Materials, Eds. by W. E. Hatfield, and J. H. Miller, Jr. (Marcel Dekker, New York, 1988), p. 99-106.
+                </li>
+                <li>
+                    "Density Functional Theory for New High-Temperature Superconducting Phase Transition," A. Tachibana, in The Physics and Chemistry of Organic Superconductors, E (Springer, New York, 1990), pp. 461-464.
+                </li>
+                <li>
+                    "Finite-Size Dimensional Analysis of the Superconducting Vibronic Interaction," A. Tachibana, Int. J. Quant. Chem., 41, 273-279 (1992).
+                </li>
+                <li>
+                    "Novel Electron Correlation in the Scattering Continuum for a Stability Analysis of the Electron Pair in the 'Atomic Level'," A. Tachibana, Bull. Chem. Soc. Jpn., 66, 3319-3325 (1993).
+                </li>
+                <li>
+                    "Wannier Analysis of the Cooper Pairing Force," A. Tachibana, Int. J. Quant. Chem., 49, 625-637 (1994).
+                </li>
+                <li>
+                    "Electron-Pair Potential in the Doped C60 Superconductors," A. Tachibana and H. Inaba, Fullerene Science & Technology, 2, 107-119 (1994).
+                </li>
+                <li>
+                    "Zero-Temperature Equation-of-Motion of Electron Pair in the BCS Theory of Superconductivity," A. Tachibana, Can. J. Chem., 74, 1106-1115 (1996)
+                </li>
+                <li>
+                    "Toward Control of Quantum Pair of Electrons in Novel Functional Superconducting Electronic Devices," A. Tachibana, M. Fuju, and T. Noda, in "Recent Research Developments in Physical Chemistry," Ed. by S.G. Pandalai (Transworld Research Network, Trivandrum, India), 2, 841-866 (1998).
+                </li>
+            </div>
+        <hr>
+
+        <h2 id="theory4">Quantum Irreversible Thermodynamics</h2>
+            <p>Chemical potential inequality principle of the quantum irreversible thermodynamics has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#100">
+                    "Chemical Potential Inequality Principle," A. Tachibana, Theoretical Chemistry Accounts, 102, 188-195 (1999).
+                </a>
+                </li>
+            </div>
+        <hr>
+
+        <h2 id="theory5">Regional DFT</h2>
+            <p>Regional DET (Density Functional Theory) has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                    "Density Functional Rationale of Chemical Reaction Coordinate," A. Tachibana, Int. J. Quantum Chem., Quantum Chem. Symp., 21, 181-190 (1987).
+                </li>
+                <li>
+                    "Application of the Mermin Entropy Principle to the 'Apparatus' Density Functional Theory," A. Tachibana, Int. J. Quantum Chem., 35, 361-372 (1989).
+                </li>
+                <li>
+                    "On the Redistribution of Electrons for Chemical Reaction Systems," A. Tachibana and R. G. Parr, Int. J. Quant. Chem., 41, 527-555 (1992).
+                </li>
+                <li>
+                    "New Formulation of the Analytical Electronic Energy and the Regional Density Functional Theory," A. Tachibana, Int. J. Quant. Chem., 57, 423-428 (1996).
+                </li>
+                <li>
+                    "Application of the Regional Density Functional Theory: the Chemical Potential Inequality in HeH+ System,"  A. Tachibana, K. Nakamura, K. Sakata, and T. Morisaki, Int. J. Quantum Chem., 74, 669-679 (1999).
+                </li>
+            </div>
+        <hr>
+
+        <h2 id="theory6">Quantum Energy Density</h2>
+            <p> Field theory of the electronic kinetic energy density and tension density has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#101">
+                    "Electronic energy density in chemical reaction systems," A. Tachibana, Journal of Chemical Physics,115, 3497-3518 (2001).
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#188">
+                    "Energy Density in Materials and Chemical Reaction Systems," A. Tachibana, in Reviews in Modern Quantum Chemistry: A Celebration of the Contributions of Robert Parr, edited by Sen, K. D. (World Scientific, Singapore, 2002), Chap. 45, pp. 1327-1366.
+                </a>
+                </li>
+            </div>
+        <hr>
+
+        <h2 id="theory7">Rigged QED (Quantum Electrodynamics) Theory</h2>
+            <p>Rigged QED (Quantum Electrodynamics) theory has firstly been formulated. </p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#189">
+                    "Field Energy Density in Chemical Reaction Systems," A. Tachibana, in Fundamental Perspectives in Quantum Chemistry: A Tribute to the Memory of Per-Olov Lowdin, Eds. by Erkki Brandas and Eugene, Kryachko (Kluwer Academic Publishers, Dordrecht, 2003), pp. 211-239.
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#180">
+                    "First-Principle Theoretical Study on the Dynamical Electronic Characteristics of Electromigration in the Bulk, Surface and Grain Boundary," A. Tachibana, in Stress Induced Phenomena in Metallization, edited by S. P. Baker (America Institute of Physics, NewYork, , 2002), pp. 105-116.
+                </a>
+                </li>
+            </div>
+        <hr>
+
+        <h2 id="theory8">Quantum Electron Spin Vorticity Principle</h2>
+            <p>Quantum electron spin vorticity theory has firstly been formulated. </p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#150">
+                    "General relativistic symmetry of electron spin torque," A. Tachibana, Journal of Mathematical Chemistry 50, 669-688 (2012).
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#192">
+                    "Electronic Stress with Spin Vorticity," A. Tachibana, In Concepts and Methods in Modern Theoretical Chemistry: Electronic Structure and Reactivity (Atoms, Molecules, and Clusters): CRC Press, Chap. 12, pp. 235-251 (2013).
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#161">
+                    "Stress Tensor of Electron as Energy Density with Spin Vorticity," A. Tachibana, J. Comput. Chem. Jpn., 13, 18-31 (2014).
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#162">
+                    "Electronic stress tensor of chemical bond,"A. Tachibana, Indian Journal of Chemistry A, Vol. 53A, Aug-Sept 2014, pp. 1031-1035.
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#166">
+                    "General relativistic symmetry of electron spin vorticity," A. Tachibana, J. Math. Chem.
+                </a>
+                </li>
+                <li>
+                    "Quantum electron spin vorticity theory with $b$-photon, $f$-electron, $f^c$-positron algebras," A. Tachibana, Annual Meeting of Japan Society for Molecular Science (2015, Tokyo), Abstract 2E01, Thursday (Sep. 17), Oral sessions, Venue E [Theory/Calculation] Morning.
+                </li>
+            </div>
+        <hr>
+        <h2 id="theory9">Alpha-Oscillator Theory</h2>
+            <p> Alpha-oscillator theory has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#166">
+                    "General relativistic symmetry of electron spin vorticity," A. Tachibana, J. Math. Chem. 53, 1943-1965 (2015).
+                </a>
+                </li>
+                <li>
+                <a href="qed/References.html#168">
+                    "Time-dependent renormalization of alpha-oscillators for QED," A. Tachibana, J. Math. Chem. 54, 661-681 (2016).
+                </a>
+                </li>
+            </div>
+        <hr>
+        <h2 id="theory10">Geodesic Angular Momentum Theory</h2>
+            <p>Geodesic Angular Momentum Theory has firstly been formulated. </p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#200">
+                    "Geodesic angular momentum," A. Tachibana, 2023 Phys. Scr. 98 065010.
+                </a>
+                </li>
+            </div>
+        <hr>
+        <h2 id="theory11">Dark Energy Theory</h2>
+            <p>Dark Energy Theory has firstly been formulated.</p>
+            <p> Selected Publications: </p>
+            <div class="papers">
+                <li>
+                <a href="qed/References.html#200">
+                    "Geodesic angular momentum," A. Tachibana, 2023 Phys. Scr. 98 065010.
+                </a>
+                </li>
+            </div>
+        <hr>
+
+        <div class="space"></div> 
+
+    </div>
+
+
+</body>
+</html>
+
